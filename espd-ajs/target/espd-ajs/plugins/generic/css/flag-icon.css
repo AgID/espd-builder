@@ -1,0 +1,128 @@
+.flag-icon-background {
+  background-size: contain;
+  background-position: 100%;
+  background-repeat: no-repeat;
+}
+
+.flag-icon {
+  background-size: contain;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 16%;
+  height: 100%;
+  line-height: 1em;
+}
+
+.flag-icon:before {
+  content: "\00a0";
+}
+
+.flag-icon-bg {
+  background-image: url(flags/icon/bg.svg);
+}
+
+.flag-icon-es {
+  background-image: url(flags/icon/es.svg);
+}
+
+.flag-icon-cs {
+  background-image: url(flags/icon/cs.svg);
+}
+
+.flag-icon-da {
+  background-image: url(flags/icon/da.svg);
+}
+
+.flag-icon-de {
+  background-image: url(flags/icon/de.svg);
+}
+
+.flag-icon-et {
+  background-image: url(flags/icon/et.svg);
+}
+
+.flag-icon-el {
+  background-image: url(flags/icon/el.svg);
+}
+
+.flag-icon-en {
+  background-image: url(flags/icon/en.svg);
+}
+
+.flag-icon-fr {
+  background-image: url(flags/icon/fr.svg);
+}
+
+.flag-icon-ga {
+  background-image: url(flags/icon/ga.svg);
+}
+
+.flag-icon-hr {
+  background-image: url(flags/icon/hr.svg);
+}
+
+.flag-icon-it {
+  background-image: url(flags/icon/it.svg);
+}
+
+.flag-icon-lv {
+  background-image: url(flags/icon/lv.svg);
+}
+
+.flag-icon-lt {
+  background-image: url(flags/icon/lt.svg);
+}
+
+.flag-icon-hu {
+  background-image: url(flags/icon/hu.svg);
+}
+
+.flag-icon-mt {
+  background-image: url(flags/icon/mt.svg);
+}
+
+.flag-icon-nl {
+  background-image: url(flags/icon/nl.svg);
+}
+
+.flag-icon-pl {
+  background-image: url(flags/icon/pl.svg);
+}
+
+.flag-icon-pt {
+  background-image: url(flags/icon/pt.svg);
+}
+
+.flag-icon-ro {
+  background-image: url(flags/icon/ro.svg);
+}
+
+.flag-icon-sk {
+  background-image: url(flags/icon/sk.svg);
+}
+
+.flag-icon-sl {
+  background-image: url(flags/icon/sl.svg);
+}
+
+.flag-icon-fi {
+  background-image: url(flags/icon/fi.svg);
+}
+
+.flag-icon-sv {
+  background-image: url(flags/icon/sv.svg);
+}
+
+.flag-icon-no {
+  background-image: url(flags/icon/no.svg);
+}
+
+.flag-icon-is {
+  background-image: url(flags/icon/is.svg);
+}
+
+.flag-icon. {
+  width: 100%;
+}

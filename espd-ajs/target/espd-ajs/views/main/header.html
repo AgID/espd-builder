@@ -1,0 +1,141 @@
+
+<div class="espd-header-top">
+	<ul class="nav navbar-nav hidden-xs">
+		<li class="element">
+			<a href="http://www.consip.it/" target="_blank" style="padding-top: 8px; padding-bottom: 5px">
+				<img src="images/consip.png" alt="Logo Consip" class="img-responsive logoConsip">
+			</a>
+		</li>
+		<li>
+			<a href="http://www.mef.gov.it/" id="go_to_mef_link" target="_blank" style="padding-top: 7px; padding-bottom: 5px">
+				<img src="images/mef.png" alt="Logo MEF" class="img-responsive">
+			</a>
+		</li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right hidden-xs" style="margin-top: .5em;">
+		<li>
+			<a target="_blank" href="http://ec.europa.eu/growth/legal-notice/index_en.htm" class="linkto">
+				<span data-i18n="legal_notice">{{variablesTranslate.legal_notice}}</span></a>
+        </li>
+		<li>
+			<a target="_blank" href="http://ec.europa.eu/growth/cookies/index_en.htm" class="linkto">
+				<span data-i18n="cookies">{{variablesTranslate.cookies}}</span></a>
+        </li>
+		<li>
+			<a target="_blank" href="#contact" class="linkto">
+				<span data-i18n="contact">{{variablesTranslate.contact}}</span></a>
+        </li>
+		<li>
+			<a target="_blank" href="#about" class="linkto">
+				<span data-i18n="about">{{variablesTranslate.about}}</span></a>
+        </li>
+		<li class="element" style="width: 10em;">
+			<select id="language" ng-model="selectedLang" ng-init="initSelectPicker()" ng-change="changeLanguage()"
+                     class="selectpicker">
+                 <option ng-show="language.code == 'it' || language.code == 'en'" ng-repeat="language in languages | orderBy : languange.sourceLanguage"
+                         value="{{language.code}}"
+                         data-icon="flag-icon flag-icon-{{language.code | lowercase}}">
+                     {{language.sourceLanguage}}
+                 </option>
+             </select>
+         </li>
+	</ul>
+	<div class="row visible-xs" style="min-height:65px">
+		<div class="col-xs-12 nopadding">
+	    	<div style="height:65px">
+				<div class="col-xs-5 vertical-align-xs">
+				    <a href="http://www.consip.it/" target="_blank"><img src="images/consip.png" alt="Logo Consip" class="img-responsive"></a>
+				</div>
+				<div class="col-xs-4 vertical-align-xs nopadding-xs">
+				    <a href="http://www.mef.gov.it/" target="_blank"><img src="images/mef.png" alt="Logo MEF" class="img-responsive"></a>
+				</div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+<div class="collapse navbar-collapse" style="min-height: 82px;">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav navbar-left" style="padding-top: 25px;">
+			<li>
+				<img id="acquisti-rete-banner-flag" class="hidden-print" src="images/logo.svg" alt="Acquisti in rete logo"
+					style="position: relative;width:240px;max-width:100%;"/>
+    		</li>
+    	</ul>
+    	<ul class="nav navbar-right flex-column" style="padding-top: 15px;">
+    		<li>
+			    <span id="espd-banner-title-text" class="banner-title"
+			          data-i18n="app_title">{{variablesTranslate.app_title}}</span>
+			</li>
+			<li class="text-right">
+			   	<span id="espd-banner-sub-title-text" class="banner-subtitle"
+			          data-i18n="app_subtitle">{{variablesTranslate.app_subtitle}}</span>
+    		</li>
+		</ul>
+	</div>
+</div>
+
+<div class="navbar-header visible-xs visible-sm nav-down subheaderXs">
+	<div class="col-xs-7 hidden-sm vertical-align-xs" style="z-index:10;">
+		<img src="images/logo.svg" alt="Logo AcquistinRetePA" class="img-responsive logo-pos" style="position: relative; max-width:80%;" />
+	</div>
+	<div class="col-xs-5 hidden-sm vertical-align-xs text-center" style="z-index:10;">
+		<span id="espd-banner-title-text-sm" class="banner-title-sm" data-i18n="app_title">ESPD</span>
+	</div>
+</div>
+
+<!-- <div id="espd-top-lang-selector" class="row hidden-print espd-header-top-lang-selector espd-nomargin">
+    <ul class="col-lg-12 espd-header-reset-list row espd-nopadding espd-nomargin">
+        <div class="col-lg-2 espd-nopadding espd-floatRight">
+            <li class=" col-lg-12 espd-header-element espd-header-element-border">
+                <label for="language"></label>
+                <select id="language" ng-model="selectedLang" ng-init="initSelectPicker()" ng-change="changeLanguage()"
+                        class="selectpicker">
+                    <option ng-repeat="language in languages | orderBy : languange.sourceLanguage"
+                            value="{{language.code}}"
+                            data-icon="flag-icon flag-icon-{{language.code}}">
+                        {{language.sourceLanguage}}
+                    </option>
+                </select>
+            </li>
+        </div>
+        <div class="col-lg-10 espd-nopadding">
+            <li class="espd-header-element espd-header-element-border espd-floatRight espd-nopadding col-lg-3">
+                <div class="espd-header-hover-caret"></div>
+                <a class="espd-header-link col-lg-12 espd-centerAlign" target="_blank" href="#about"><span
+                        data-i18n="about">{{variablesTranslate.about}}</span></a></li>
+            <li class="espd-header-element espd-header-element-border espd-nopadding espd-floatRight col-lg-3">
+                <div class="espd-header-hover-caret"></div>
+                <a class="espd-header-link col-lg-12 espd-centerAlign" target="_bl
+                ank" href="#contact"><span
+                        data-i18n="contact">{{variablesTranslate.contact}}</span></a>
+            </li>
+            <li class="espd-header-element espd-header-element-border espd-nopadding espd-floatRight col-lg-3">
+                <div class="espd-header-hover-caret"></div>
+                <a class="espd-header-link col-lg-12 espd-centerAlign" target="_blank"
+                   href="http://ec.europa.eu/growth/cookies/index_en.htm"><span
+                        data-i18n="cookies">{{variablesTranslate.cookies}}</span></a>
+            </li>
+            <li class="espd-header-element espd-header-element-border espd-nopadding espd-floatRight col-lg-3">
+                <div class="espd-header-hover-caret"></div>
+                <a class="espd-header-link col-lg-12 espd-centerAlign" target="_blank"
+                   href="http://ec.europa.eu/growth/legal-notice/index_en.htm"><span
+                        data-i18n="legal_notice">{{variablesTranslate.legal_notice}}</span></a></li>
+        </div>
+    </ul>
+</div>
+<div id="espd-header" class="espd-header">
+    <img id="espd-banner-flag" class="hidden-print espd-banner-flag" src="images/logo.png"
+         alt="European Commission logo"/>
+    <img id="acquisti-rete-banner-flag" class="hidden-print acquisti-rete-banner-flag"
+         src="images/logoAcquistiInRete.png" alt="Acquisti in rete logo"/>
+    <img id="espd-banner-flag" class="visible-print espd-banner-flag" style="width: 114px; height: 80px;"
+         src="images/logo.png"
+         alt="European Commission logo"/>
+    <span id="espd-banner-title-text" class="hidden-print espd-banner-title-text" data-i18n="app_title"></span>
+    <span id="espd-banner-title-text" style="font-size: 160%" class="visible-print espd-banner-title-text"
+          data-i18n="app_title">{{variablesTranslate.app_title}}</span>
+    <span id="espd-banner-image-title-fill" class="hidden-print espd-banner-image-title-fill"></span>
+    <span id="espd-banner-sub-title-text" class="hidden-print espd-banner-sub-title-text"
+          data-i18n="app_subtitle">{{variablesTranslate.app_subtitle}}</span>
+</div> -->

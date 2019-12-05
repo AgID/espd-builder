@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="European Single Procurement Document (ESPD) is a self-declaration of the businesses' financial status, abilities and suitability for a public procurement procedure. It is used as a preliminary evidence of fulfilment of the exclusion and eligibility criteria required in EU public procurement procedures. The tenderers no longer have to provide full documentary evidence and different forms, which means a significant simplification of access to cross-border tendering opportunities. The European Commission provides a free online service for the buyers, bidders and other parties interested in filling in the ESPD electronically.">
+    <meta name="keywords"
+          content=" European Single Procurement Document, ESPD, public, procurement, e-procurement, electronic procurement, tender, web service, online service, form, self-declaration, proof, evidence, exclusion, eligibility, selection, criteria, public buyer, contracting authority, bidder, tenderer, economic operator, Europe, European Union, European Commission"/>
+    <meta name="author" content="European Commission">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <title>ESPD</title>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="plugins/jquery/jquery-3.3.1.min.js"></script>
+    <!-- AngularJS -->
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="plugins/angularjs/angular-route.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" type="text/css" href="plugins/fonts/font-awesome.min.css"/>
+    <!-- Bootstrap -->
+    <!--<link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />-->
+    <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/bootstrap-plugins/x-editable/bootstrap3-editable/css/bootstrap-editable.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/bootstrap-plugins/bootstrap-toggle-master/css/bootstrap-toggle.min.css"/>
+    <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/generic/css/flag-icon.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/bootstrap-plugins/bootstrap-select/css/bootstrap-select.min.css"/>
+    <script type="text/javascript" src="plugins/bootstrap-plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <!-- JS -->
+    <script type="text/javascript"
+            src="plugins/bootstrap-plugins/x-editable/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery-plugins/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery-plugins/validate/additional-methods.min.js"></script>
+    <script type="text/javascript"
+            src="plugins/bootstrap-plugins/bootstrap-toggle-master/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery-plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <script type="text/javascript" src="plugins/generic/js/init.js"></script>
+    <script type="text/javascript" src="plugins/generic/js/piwik.js"></script>
+    <script type="text/javascript" src="plugins/generic/js/espd.js"></script>
+    <!-- Components -->
+
+    <script type="text/javascript" src="plugins/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="controllers/MainController.js"></script>
+    <script type="text/javascript" src="controllers/LanguagesController.js"></script>
+    <script type="text/javascript" src="controllers/StartController.js"></script>
+    <script type="text/javascript" src="controllers/ProcedureController.js"></script>
+    <script type="text/javascript" src="controllers/ExclusionController.js"></script>
+    <script type="text/javascript" src="controllers/SelectionController.js"></script>
+    <script type="text/javascript" src="controllers/ConclusionController.js"></script>
+    <script type="text/javascript" src="controllers/OverviewController.js"></script>
+    <script type="text/javascript" src="services/MainService.js"></script>
+    <script type="text/javascript" src="services/TranslateService.js"></script>
+    <script type="text/javascript" src="services/Constants.js"></script>
+    <script type="text/javascript" src="services/StartService.js"></script>
+    <script type="text/javascript" src="services/ProcedureService.js"></script>
+    <script type="text/javascript" src="services/ExclusionService.js"></script>
+    <script type="text/javascript" src="services/SelectionService.js"></script>
+    <script type="text/javascript" src="services/CriterionParserCA.js"></script>
+    <script type="text/javascript" src="services/CriterionParserEO.js"></script>
+    <script type="text/javascript" src="services/OverviewService.js"></script>
+    <script type="text/javascript" src="services/CommonService.js"></script>
+    <script type="text/javascript" src="services/ParentService.js"></script>
+    <script type="text/javascript" src="services/CriterionParentService.js"></script>
+    <script type="text/javascript" src="services/AngularCommonService.js"></script>
+    <script type="text/javascript" src="services/EmptyModelService.js"></script>
+    <script type="text/javascript" src="services/SupportService.js"></script>
+    <script type="text/javascript" src="services/ConclusionService.js"></script>
+    <script type="text/javascript" src="services/CriterionParserCommon.js"></script>
+    <script type="text/javascript" src="plugins/momentJS/moment-with-locales.js"></script>
+    <script type="text/javascript" src="plugins/angular-uuid/angular-uuid.js"></script>
+    <script type="text/javascript" src="services/CancelService.js"></script>
+    <script type="text/javascript" src="directives/staticInclude.js"></script>
+    <script type="text/javascript" src="directives/dateInput.js"></script>
+    <script type="text/javascript" src="directives/file.js"></script>
+    <script type="text/javascript" src="directives/fileModel.js"></script>
+    <script type="text/javascript" src="directives/allowPattern.js"></script>
+    <script type="text/javascript" src="directives/base-sixty-four-input.js"></script>
+    <script type="text/javascript" src="directives/multiselect.js"></script>
+    <script type="text/javascript" src="directives/ui-mask.js"></script>
+    <script type="text/javascript" src="directives/removeJsonValues.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="plugins/generic/css/espd.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/generic/css/nav-wizard.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/generic/css/flag-icon.css"/>
+</head>
+<body>
+
+	<div ng-app="espdApp" ng-controller="MainController">
+	    <div id="espdContent">
+	        <div class="container espd-container">
+	            <div static-include template-path="./views/main/header.html"></div>
+	            <!-- <div static-include template-path="./views/main/breadcrumb.html"></div> -->
+	            <div class="container">
+	                <div ng-if="notHome()" static-include template-path="./views/progress.html"></div>
+	                <ui-view></ui-view>
+	            </div>
+	        </div>
+	        <div static-include template-path="./views/main/footer.html"></div>
+	    </div>
+        <div static-include template-path="./views/modals/timeoutModal.html"></div>
+        <div static-include template-path="./views/main/scrollButton.html"></div>
+	</div>
+	<div class="modal" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+	    <div class="modal-body espd-spinnerContainer">
+	    	<div class="espd-spinner"></div>
+	    </div>
+	</div>
+
+</body>
+</html>

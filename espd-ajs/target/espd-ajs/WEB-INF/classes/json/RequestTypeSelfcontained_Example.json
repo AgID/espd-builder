@@ -1,0 +1,119 @@
+{
+  "authentication": {
+    "user": null
+  },
+  "bean": {
+    "profileExecutionIDModel": {
+      "profileExecutionID": {
+        "code": "ESPD-EDMv2.0.2-SELFCONTAINED"
+      }
+    },
+    "idModel": {
+      "id": null, // Generato da Backend
+      "schemeAgencyID": "PTRMSM92A08H501Z" // Utilizzare anche il CODICE FISCALE della stazione appaltante per l'attributo schemeAgencyID
+    },
+    "copyIndicator": "false",
+    "uuidModel": {
+      "schemeAgencyName": "PTRMSM92A08H501Z" // Utilizzare anche il CODICE FISCALE della stazione appaltante per l'attributo schemeAgencyID
+    },
+    "contractFolderIDModel": {
+      "referenceNumber": "MP.19920108.0001-0" // Identificativo interno del Fascicolo di Gara
+    },
+    "date": "2018-10-09", // Data in cui il documento Ë stato rilasciato dalla stazione appaltante
+    "time": "15:00:00", // Orario in cui il documento Ë stato rilasciato dalla stazione appaltante
+    "versionIDModel": {
+      "reloaded": "false", // Indica se l'xml Ë creato da zero (false) oppure Ë stato uploadato (true) 
+      "versionID": null, // Versione del contenuto del documento (null se creato da zero)
+      "previousVersionID": null
+    },
+    "procedureCodeModel": {
+      "procedureType": {
+        "code": "OPEN" // Usare obbligatoriamente la code list ProcedureType
+      }
+    },
+    "qualificationApplicationTypeCodeModel": {
+      "qualificationApplicationType": {
+        "code": "SELFCONTAINED" // Uso obbligatorio del CodeList QualificationApplicationType
+      }
+    },
+    "contractingPartyModels": [
+      {
+        "buyerProfileUriModel": {
+          "buyerProfileUri": "UrlAutorit‡Contraente"
+        },
+        "partyModel": {
+          "partyIdentificationModels": [
+            {
+              "idModel": {
+                "id": "IdAutorit‡Contraente"
+              }
+            }
+          ],
+          "websiteUriModel": {
+            "websiteUri": "SitoWebAutorit‡Contraente"
+          },
+          "endPointIDModel": {
+            "endPointID": "IndirizzoElettronicoAutorit‡Contraente"
+          },
+          "partyNameModels": [
+            {
+              "name": "RagioneSocialeAutorit‡Contraente"
+            }
+          ],
+          "addressModel": {
+            "streetName": "Fifth Avenue, 90",
+            "cityName": "New York",
+            "postalZone": "00100",
+            "countryModel": {
+              "name": "Italia",
+              "identificationCodeModel": {
+                "countryCodeIdentifier": {
+                  "code": "IT"
+                }
+              }
+            }
+          },
+          "contactModel": {
+            "name": "Massimiliano Petruzzi",
+            "telephone": "3400123456",
+            "telefax": "3400123457",
+            "email": "mpetruzzi@pccube.com"
+          },
+          "serviceProviderPartyModels": [
+            {
+              "partyModel": {
+                "partyIdentificationModels": [
+                  {
+                    "idModel": {
+                      "id": "IdServiceProvider"
+                    }
+                  }
+                ],
+                "websiteUriModel": {
+                  "websiteUri": "SitoWebServiceProvider"
+                },
+                "endPointIDModel": {
+                  "endPointID": "IndirizzoElettronicoServiceProvider"
+                },
+                "partyNameModels": [
+                  {
+                    "name": "NomeUfficialeServiceProvider"
+                  }
+                ],
+                "addressModel": {
+                  "countryModel": {
+                    "identificationCodeModel": {
+                      "countryCodeIdentifier": {
+                        "code": "EN"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

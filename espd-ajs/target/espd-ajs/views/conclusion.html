@@ -1,0 +1,130 @@
+<div>
+    <div>
+        <h2>{{variablesTranslate.createcafinish_header}}</h2>
+    </div>
+    
+    <div class="panel espd-panel" ng-if="startVariables.userRole == 'eo'">
+        <div id="criminal_conv_head" class="panel-heading" data-toggle="collapse" data-target="#criminal_conv"
+             ng-click="grounds_criminal_conv= !grounds_criminal_conv">
+            <span class="espd-marginLeft1em">
+                {{variablesTranslate.createcafinish_reduction}}
+            </span>
+        </div>
+        <div id="criminal_conv" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="panel espd-panel">
+                            <div class="panel-body">
+		                        <ul class="fa-ul">
+		                            <li>
+		                                <i class="fa fa-info-circle fa-lg fa-li"></i>
+		                                <div id="filter_text">
+		                                	<span data-i18n="filter_alert">{{variablesTranslate.createcafinish_toptext}}</span>
+		                                </div>
+		                            </li>
+		                        </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="CRITERION.OTHER.EO_DATA.REDUCTION_OF_CANDIDATES" class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel espd-panel">
+        <div id="grounds_payment_tax_header" class="panel-heading" data-toggle="collapse"
+             data-target="#grounds_payment_tax" ng-click="grounds_payment_taxes= !grounds_payment_taxes">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_grounds_payment_taxes">
+                {{variablesTranslate.createcafinish_concl_statements}}
+            </span>
+        </div>
+        <div id="grounds_payment_tax" class="collapse in">
+            <div class="panel-body">
+                <div class="row" style="padding-bottom: 1em;">
+                    <div class="col-md-12 col-lg-12">
+                    	<span>{{variablesTranslate.createcafinish_concl_statements_text_first}}</span>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 1em;">
+                    <div class="col-md-12 col-lg-12">
+                    	<span>{{variablesTranslate.createcafinish_concl_statements_text_second}}</span>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 1em;">
+                    <div class="col-md-12 col-lg-12">
+                    	<span>{{variablesTranslate.createcafinish_concl_statements_text_third}}</span>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 1em;">
+                    <div class="col-md-12 col-lg-12">
+                    	<span>{{variablesTranslate.createcafinish_concl_statements_text_fourth}}</span>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 1em;">
+                    <div class="col-md-12 col-lg-12">
+                    	<span>{{variablesTranslate.createcafinish_concl_statements_text_fifth}}</span>
+                    </div>
+                </div>
+                <div ng-show="startVariables.userRole == 'eo'">
+	                <div class="row">
+	                    <div class="col-md-12 col-lg-12">
+	                    	<span>{{variablesTranslate.createcafinish_concl_statements_signature}}</span>
+	                    </div>
+	                </div>
+	                <div class="row" style="padding-top: 1em;">
+	                	<div class="col-md-6 col-lg-6">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<span class="col-md-2">{{variablesTranslate.crit_date}}</span>
+									<div class="col-md-10">
+	                        			<!--date-input e ngmodel da inserire-->
+	                        			<input type="date" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<span class="col-md-2">{{variablesTranslate.place}}</span>
+									<div class="col-md-10">
+	                        			<!--date-input e ngmodel da inserire-->
+	                        			<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<span class="col-md-2">{{variablesTranslate.signature}}</span>
+									<div class="col-md-10">
+									</div>
+								</div>
+							</div>	    
+	                	</div>
+	                	<div class="col-md-6 col-lg-6"></div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel espd-panel">
+        <div id="insolvency_conflicts_head" class="panel-heading" data-toggle="collapse" data-target="#insolvency_conf"
+             ng-click="insolvency_conflicts= !insolvency_conflicts">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_insolvency_conflicts">
+                {{variablesTranslate.createcafinish_export}}
+            </span>
+        </div>
+        <div id="insolvency_conf" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <h5>
+                            <span>{{variablesTranslate.createcafinish_export_content}}</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div static-include template-path="./views/main/buttons.html"></div>
+</div>
+
+<div static-include template-path="./views/modals/cancelModal.html"></div>

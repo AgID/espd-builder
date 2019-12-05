@@ -1,0 +1,35 @@
+<div class="row" style="padding:50px">
+
+    <div ng-if="espdEnvironment" class="alert alert-danger">
+        <ul class="fa-ul">
+            <li>
+                <i class="error-label fa fa-info-circle fa-lg fa-li"></i>
+                <span data-i18n="app_environment"></span> <a
+                    href="https://ec.europa.eu/espd">https://ec.europa.eu/espd</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--<div ng-repeat="language in languages | orderBy : languange.sourceLanguage" class="col-lg-3 col-sm-6">-->
+        <!--<div style="cursor:pointer" class="espd-splashLangDiv">-->
+        	<!--<a style="cursor:pointer" ng-click="setDefaultLanguage(language.code);redirectToStart()" class="espd-splashLangBox flag-icon flag-icon-{{language.code | lowercase}}"></a>-->
+            <!--<a style="cursor:pointer" ng-click="setDefaultLanguage(language.code);redirectToStart()">{{language.sourceLanguage}}</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="row espd-centerAlign">
+                <div class="col-lg-6">
+                    <a style="cursor:pointer" ng-click="setDefaultLanguage(languages[11].code);redirectToStart()" class="espd-splashLangBox flag-icon flag-icon-{{languages[11].code | lowercase}}"></a>
+                    <a style="cursor:pointer" ng-click="setDefaultLanguage(languages[11].code);redirectToStart()">{{languages[11].sourceLanguage}}</a>
+                </div>
+                <div class="col-lg-6">
+                    <a style="cursor:pointer" ng-click="setDefaultLanguage(languages[7].code);redirectToStart()" class="espd-splashLangBox flag-icon flag-icon-{{languages[7].code | lowercase}}"></a>
+                    <a style="cursor:pointer" ng-click="setDefaultLanguage(languages[7].code);redirectToStart()">{{languages[7].sourceLanguage}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>

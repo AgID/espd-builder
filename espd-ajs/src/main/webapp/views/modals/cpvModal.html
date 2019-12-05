@@ -1,0 +1,97 @@
+<div id="cpvModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header espd-centerAlign">
+                <button ng-click="removeCpvFilters()" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <span class="espd-marginLeftAsFaIcon">{{variablesTranslate.createca_add_cpv}}</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row espd-centerAlign">
+                    <h5 class="espd-fontBold">
+                        <span>{{variablesTranslate.createca_filtercpv_code}}</span>
+                    </h5>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" ng-model="filterCpvCode"
+                                           ng-attr-placeholder="{{variablesTranslate.createca_cpv_filter_code_minimum_char}}">
+                                    <h6 class="espd-cpvFilterError" ng-show="cpvFilterCodeError">{{variablesTranslate.createca_cpv_filter_code_error}}</h6>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row espd-centerAlign">
+                    <h5 class="espd-fontBold">
+                        <span>{{variablesTranslate.createca_filtercpv_description}}</span>
+                    </h5>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" ng-model="filterCpvDescription"
+                                           ng-attr-placeholder="{{variablesTranslate.createca_cpv_filter_description_minimum_char}}">
+                                    <h6 class="espd-cpvFilterError" ng-show="cpvFilterDescriptionError">{{variablesTranslate.createca_cpv_filter_description_error}}</h6>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row" ng-show="filteredCpvList.length>0">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row espd-cpvTableHeaderModal">
+                                            <div class="col-lg-3 espd-cpvTableHeaderSeparator">
+                                                {{variablesTranslate.crit_code}}
+                                            </div>
+                                            <div class="col-lg-6 espd-cpvTableHeaderSeparator">
+                                                {{variablesTranslate.crit_description}}
+                                            </div>
+                                            <div class="col-lg-3">
+                                                {{variablesTranslate.createca_filtercpv_actions}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row espd-cpvTableList">
+                                    <div class="col-lg-12">
+                                        <div style="height: 3em;" class="row espd-verticalAlign espd-cpvTableHeaderLineSeparatorBottom" ng-repeat="codiceCpv in filteredCpvList">
+                                            <div class="col-lg-3">{{codiceCpv.code}}</div>
+                                            <div class="col-lg-6 espd-truncateWord" title="{{codiceCpv.translation}}">{{codiceCpv.translation}}</div>
+                                            <div class="col-lg-3">
+                                                <button ng-click="addCpv(codiceCpv,$index)" class="btn btn-primario espd-cpvAddButton">{{variablesTranslate.add}}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondario" data-dismiss="modal" ng-click="removeCpvFilters()">
+                    {{variablesTranslate.modal_cancel_button}}
+                </button>
+                <button type="button" class="btn btn-primario" ng-click="filterCpvList()">
+                    {{variablesTranslate.search}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

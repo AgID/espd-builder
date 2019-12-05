@@ -1,0 +1,282 @@
+{
+            "criterion": {
+                "name": "Payment of social security contributions",
+                "description": "Has the economic operator breached its obligations relating to the payment social security contributions, both in the country in which it is established and in Member State of the contracting authority or contracting entity if other than the country of establishment?",
+                "subcriterions": {
+                    "0": [
+                        {
+                            "name": "[Name of the National Criterion]",
+                            "cardinality": "0n",
+                            "elementCode": "ON*",
+                            "questionGroups": {
+								"0":[
+									{
+										"idQuestion": "",
+										"cardinality": "1",
+										"elementCode": "ON*",
+										"caption": {
+											"description": "[Additional information; e.g. no evidences online]",
+											"cardinality": "1",
+											"propertyDataType": "NONE"
+										},
+										"questions": {
+											"0":[
+												{
+													"description": "Your Answer",
+													"cardinality": "1",
+													"propertyDataType": "INDICATOR",
+													"value": null,
+													"id": "qwertyuiop"
+												}
+											]
+										}
+									}
+								]
+                                
+                            }
+                        }
+                    ]
+                },
+                "legislation": {},
+                "requirementGroups": {
+					"0":[
+						{
+							"cardinality": "1",
+							"elementCode": "ON*",
+							"requirements": {
+								"0":[
+										{
+											"description": "Threshold",
+											"cardinality": "1",
+											"propertyDataType": "AMOUNT",
+											"value": null
+										}
+									],
+								"1":[
+										{
+											"description": "Additional Information",
+											"cardinality": "1",
+											"propertyDataType": "DESCRIPTION",
+											"value": null
+										}
+									]
+								
+							},
+							"questionSubgroups": {
+								"0":[
+									{
+										"idQuestion": "0987654321",
+										"elementCode": "ON*",
+										"questions": {
+											"0":[
+												{
+													"id": "1234567890",
+													"description": "Your answer",
+													"value": null,
+													"cardinality": "1",
+													"propertyDataType": "INDICATOR"
+												}
+											]
+										},
+										"questionSubgroups": {
+											"0":[
+												{
+													"idQuestion": "1234567890",
+													"elementCode": "ONTRUE",
+													"cardinality": "01",
+													"questions": {
+														"0":[
+															{
+																"id": "lkjhgfdsa",
+																"description": "Country or member state concerned",
+																"propertyDataType": "CODE_COUNTRY",
+																"cardinality": "1",
+																"value": null
+															}
+														],
+														"1":[
+															{
+																"id": "asdfghjkl",
+																"description": "Amount concerned",
+																"propertyDataType": "AMOUNT",
+																"cardinality": "1",
+																"value": null
+															}
+														]
+														
+													},
+													"questionSubgroups": {
+														"0":[
+															{
+																"cardinality": "1",
+																"elementCode": "ON*",
+																"idQuestion": "zxcvbnm",
+																"questions": {
+																	"0":[
+																		{
+																			"id": "edcrfvtgb",
+																			"description": "Has this breach of obligations been established by means other than a judicial or administrative decision?",
+																			"propertyDataType": "INDICATOR",
+																			"cardinality": "1",
+																			"value": null
+																		}
+																	]
+																},
+																"questionSubgroups": {
+																	"0":[
+																		{
+																			"cardinality": "01",
+																			"elementCode": "ONTRUE",
+																			"idQuestion": "edcrfvtgb",
+																			"questions": {
+																				"0":[
+																					{
+																						"id": "mkiujnhyt",
+																						"description": "Please describe which means were used",
+																						"propertyDataType": "DESCRIPTION",
+																						"cardinality": "1",
+																						"value": null
+																					}
+																				]
+																			}
+																		}
+																	],
+																	"1":[
+																		{
+																			"cardinality": "01",
+																			"elementCode": "ON*",
+																			"idQuestion": "edcqazwsx",
+																			"questions": {
+																				"0":[
+																					{
+																						"id": "uytrfghj",
+																						"description": "Has the economic operator fulfilled its obligations by paying or entering into a binding arrangement with a view to paying the taxes or social security contributions due, including, where applicable, any interest accrued or fines?",
+																						"propertyDataType": "INDICATOR",
+																						"cardinality": "1",
+																						"value": null
+																					}
+																				]
+																			},
+																			"questionSubgroups": {
+																				"0":[
+																					{
+																						"cardinality": "01",
+																						"elementCode": "ONTRUE",
+																						"idQuestion": "uytrfghj",
+																						"questions": {
+																							"0":[
+																								{
+																									"id": "uytrfghj",
+																									"description": "Please describe them",
+																									"propertyDataType": "DESCRIPTION",
+																									"cardinality": "1",
+																									"value": null
+																								}
+																							]
+																						}
+																					}
+																				]
+																			}
+																		}
+																	],
+																	"2":[
+																		{
+																			"cardinality": "01",
+																			"elementCode": "ONFALSE",
+																			"idQuestion": "edcrfvtgb",
+																			"questions": {
+																				"0":[
+																					{
+																						"id": "45678123",
+																						"description": "If this breach of obligations was established through a judicial or administrative decision, was this decision final and binding?",
+																						"propertyDataType": "INDICATOR",
+																						"cardinality": "1",
+																						"value": null
+																					}
+																				]
+																			},
+																			"questionSubgroups": {
+																				"0":[
+																					{
+																						"cardinality": "01",
+																						"elementCode": "ONTRUE",
+																						"idQuestion": "45678123",
+																						"questions": {
+																							"0":[
+																								{
+																									"id": "mhfpoiuy",
+																									"description": "Please indicate the date of conviction or decision",
+																									"propertyDataType": "DATE",
+																									"cardinality": "1",
+																									"value": null
+																								}
+																							],
+																							
+																							"1":[
+																								{
+																									"id": "mhfpoiuy",
+																									"description": "In case of a conviction insofar as established directly therein, the length of the period of exclusion",
+																									"propertyDataType": "PERIOD",
+																									"cardinality": "1",
+																									"value": null
+																								}
+																							]
+																						}
+																					}
+																				]
+																			}
+																		}
+																	]
+																}
+															}
+														]
+													}
+												}
+											]
+										}
+									}
+								],
+								"1":[
+									{
+										"cardinality": "1",
+										"elementCode": "ON*",
+										"idQuestion": "lyuysjtzhfn",
+										"questions": {
+											"0":[
+												{
+													"id": "mhfpoiuy",
+													"description": "Is this information available electronically?",
+													"propertyDataType": "INDICATOR",
+													"cardinality": "1",
+													"value": null
+												}
+											]
+										},
+										"questionSubgroups": {
+											"0":[
+												{
+													"cardinality": "01",
+													"elementCode": "ONTRUE",
+													"idQuestion": "mhfpoiuy",
+													"questions": {
+														"0":[
+															{
+																"id": "qmepzoribj",
+																"description": "Evidence supplied",
+																"propertyDataType": "EVIDENCE_IDENTIFIER",
+																"cardinality": "1",
+																"value": null
+															}
+														]
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+            }
+        }

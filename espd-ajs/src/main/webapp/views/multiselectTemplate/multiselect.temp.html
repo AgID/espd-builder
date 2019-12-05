@@ -1,0 +1,22 @@
+<div class="dropdown espd-customFormControl" style="height: 34px;">
+    <button class="btn" ng-click="toggleSelect()" ng-disabled="disabled" ng-class="{'error': !valid()}" style="padding: 5px 12px">
+        <span class="pull-left">{{header}}</span>
+        <span class="caret pull-right" style="margin-top: 0.5em;"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <input class="input-block-level form-control" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="{{filter}}" />
+            <input style="display: none" class="input-block-level form-control" type="text" required />
+        </li>
+        <li ng-show="multiple" class="espd-multiselect-button-container">
+            <button class="btn-link btn-small espd-purpleColor espd-multiselect-button" ng-click="checkAllValues()"><span class="glyphicon glyphicon-ok"></span> {{checkAll}}</button>
+            <button class="btn-link btn-small espd-purpleColor espd-multiselect-button" ng-click="uncheckAllValues()"><span class="glyphicon glyphicon-remove"></span> {{uncheckAll}}</button>
+        </li>
+        <li ng-repeat="i in items | filter:searchText">
+            <a ng-click="select(i); focus()">
+                <span ng-if="i.checked" class="glyphicon glyphicon-ok"></span>
+                <i ng-class="{'icon-ok': i.checked, 'icon-empty': !i.checked}"></i>{{i.label}}</a>
+        </li>
+    </ul>
+    <span class="valid-feedback-error multiselect-error-message">{{variablesTranslate.validator_required}}</span>
+</div>

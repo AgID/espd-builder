@@ -1,0 +1,282 @@
+<script>
+    $(function () {
+        $("span[data-toggle='tooltip']").tooltip({
+            placement: "top",
+            html: true,
+            trigger: "hover"
+        }).addClass("fa").addClass("fa-info-circle");
+    });
+</script>
+
+
+<!-- TODO MP: Presente nella versione 1.0. Lo lascio commentato.
+<form:form id="espdFilterForm" role="form" class="form-horizontal" action="filter" method="post" commandName="espdFilterParams" data-toggle="validator" enctype="multipart/form-data"> -->
+<div class="row">
+	<div class="col-md-12 col-lg-12">
+		<div class="row">
+			<div class="col-md-12 col-lg-12">
+	        	<h3 data-i18n="filter_header">{{variablesTranslate.filter_header}}</h3>
+			</div>
+	    </div>
+	    <div ng-show="espdEnvironment" class="row">
+	    	<div class="col-md-12 col-lg-12">
+	    		<div class="alert alert-danger">
+			        <ul class="fa-ul">
+			            <li>
+			                <i class="error-label fa fa-info-circle fa-lg fa-li"></i>
+			                <span data-i18n="app_environment">{{variablesTranslate.app_environment}}</span>
+			                <a href="https://ec.europa.eu/espd">https://ec.europa.eu/espd</a>
+			            </li>
+			        </ul>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-md-12 col-lg-12">
+		    	<div class="panel espd-panel">
+			    	<div class="panel-body">
+			    		<ul class="fa-ul">
+			    			<li>
+			    				<i class="espd-info-label fa fa-info-circle fa-lg fa-li"></i>
+						        <div id="filter_text"><span data-i18n="filter_alert">{{variablesTranslate.filter_alert}}</span></div>
+						        <div id="filter_faq">
+						            <span data-i18n="faq_text_more_info">{{variablesTranslate.faq_text_more_info}}</span>
+						            <a href='http://ec.europa.eu/growth/single-market/public-procurement/e-procurement/espd/index_en.htm'>
+						                <span data-i18n="click_here"><strong>{{variablesTranslate.click_here}}</strong></span>
+						            </a>
+						            <p></p>
+						            <span data-i18n="faq_text_answers">{{variablesTranslate.faq_text_answers}}</span>
+						            <a href='http://ec.europa.eu/DocsRoom/documents/16002/attachments/1/translations/${pageContext.response.locale}/renditions/native'>
+						                <span data-i18n="faq_leaflet"><strong>{{variablesTranslate.faq_leaflet}}</strong></span>
+						            </a>
+						        </div>
+			    			</li>
+			    		</ul>
+			    	</div>
+			    </div>
+	    	</div>
+	    </div>
+
+	    <div ng-show="errorOnUpload" class="row espd-nomargin">
+	    	<div class="col-lg-12 alert espd-alert-danger">
+		        <span class="espd-alert-danger-text" data-i18n="espd_upload_error">{{variablesTranslate.espd_upload_error}}</span>
+		    </div>
+	    </div>
+
+	    <!-- TODO MP: Presente nella versione 1.0. Lo lascio commentato.
+	    <form:errors path="attachments" cssClass="errorContainer alert alert-danger"/> -->
+	    <div class="row">
+	    	<div class="col-md-12 col-lg-12">
+			    <div class="panel espd-panel">
+				    <div class="espd-heading">
+				        <span data-i18n="filter_who_are_you">{{variablesTranslate.filter_who_are_you}}</span>
+				        <span data-i18n="tooltip_espd_used_both_ca_eo" data-toggle="tooltip"
+				              data-original-title="{{variablesTranslate.tooltip_espd_used_both_ca_eo}}"></span>
+				    </div>
+			    	<div class="panel-body">
+					    <div class="radio radio-info">
+					        <span>
+					            <input ng-model="userRole" type="radio" value="ca" class="radiotab espd-radioSize"/>
+					            <label ng-click="userRole='ca'" data-i18n="filter_i_am_ca">{{variablesTranslate.filter_i_am_ca_or_eo}}</label>
+					        </span>
+					        <span data-i18n="tooltip_ca_ref_buyer"
+					              data-toggle="tooltip" data-original-title="{{variablesTranslate.tooltip_ca_ref_buyer}}"></span>
+					    </div>
+					    <div class="radio radio-info">
+					        <span>
+					            <input ng-model="userRole" type="radio" value="eo" class="radiotab espd-radioSize"/>
+					            <label ng-click="userRole='eo'" data-i18n="filter_i_am_eop">{{variablesTranslate.filter_i_am_eop}}</label>
+					        </span>
+					        <span data-i18n="tooltip_eo_ref_suppl"
+					              data-toggle="tooltip" data-original-title="{{variablesTranslate.tooltip_eo_ref_suppl}}"></span>
+					    </div>
+			    	</div>
+			    </div>
+	    	</div>
+	    </div>
+
+	    <div class="row" ng-show="userRole == 'ca'">
+	    	<div class="col-md-12 col-lg-12">
+			    <div class="panel espd-panel">
+			    	<div class="espd-heading">
+			    		<span data-i18n="filter_what_you_do">{{variablesTranslate.filter_what_you_do}}</span>
+			    	</div>
+			    	<div class="panel-body" id="tab_ca">
+			            <div class="radio radio-info">
+			                <!--<span class="k-button fa fa-upload hoverable"></span>-->
+			                <span>
+			                    <input ng-model="operations" type="radio" id="action_espd_request"
+			                           name="action" value="espd_request"
+			                           class="radiotab radioCa espd-radioSize"/>
+			                    <label ng-click="operations='espd_request'" data-i18n="filter_reuse_espd">{{variablesTranslate.filter_reuse_espd}}</label>
+			                </span>
+			                <span data-i18n="tooltip_ca_can_import_espd" data-toggle="tooltip"
+			                      data-original-title="{{variablesTranslate.tooltip_ca_can_import_espd}}"></span>
+			            </div>
+			            <div class="radio radio-info">
+			                <span class="">
+			                    <input ng-model="operations" type="radio"
+			                           id="action_create_espd_request_or_response"
+			                           name="action" value="create_espd_request_or_response"
+			                           class="radiotab radioCa espd-radioSize"/>
+			                    <label ng-click="operations='create_espd_request_or_response'" data-i18n="filter_create_espd">{{variablesTranslate.filter_create_espd}}</label>
+			                </span>
+			                <span data-i18n="tooltip_ca_can_create_espd" data-toggle="tooltip"
+			                      data-original-title="{{variablesTranslate.tooltip_ca_can_create_espd}}"></span>
+			            </div>
+					</div>
+				</div>
+	    	</div>
+	    </div>
+
+		<div class="row" ng-show="userRole == 'eo'">
+			<div class="col-md-12 col-lg-12">
+				<div class="panel espd-panel">
+			    	<div class="espd-heading">
+			            <span data-i18n="filter_what_you_do">{{variablesTranslate.filter_what_you_do}}</span>
+			    	</div>
+			    	<div class="panel-body" id="tab_eo">
+			            <div class="radio radio-info">
+			                <span>
+			                    <input ng-model="operations" type="radio" id="action_eo_import_espd" value="eo_import_espd"
+			                           class="radiotab radioCa espd-radioSize"/>
+			                    <label ng-click="operations='eo_import_espd'" data-i18n="filter_import_espd">{{variablesTranslate.filter_import_espd}}</label>
+			                </span>
+			                <span data-i18n="tooltip_filter_eo_can_import_espd" data-toggle="tooltip"
+			                      data-original-title="{{variablesTranslate.tooltip_filter_eo_can_import_espd}}"></span>
+			            </div>
+			            <!-- <div class="radio radio-info">
+			                <span class="">
+			                    <input ng-model="operations" type="radio"
+			                           id="action_eo_create_espd_response"
+			                           value="eo_create_espd_response"
+			                           class="radiotab radioCa espd-radioSize"/>
+			                    <label ng-click="operations='eo_create_espd_response'" data-i18n="filter_create_response">{{variablesTranslate.filter_create_response}}</label>
+			                </span>
+			                <span data-i18n="tooltip_filter_create_response" data-toggle="tooltip"
+			                      data-original-title="{{variablesTranslate.tooltip_filter_create_response}}"></span>
+			            </div> -->
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+	    <div class="row" id="tab-single-upload"
+			ng-show="((operations == 'espd_request' || operations == 'ca_review_espd_response') && userRole != 'eo')|| (userRole == 'eo' && operations == 'eo_import_espd')">
+	    	<div class="col-md-12 col-lg-12">
+	    		<div class="panel espd-panel">
+			        <div class="espd-heading">
+			        	<span data-i18n="filter_upload_document">{{variablesTranslate.filter_upload_document}}</span>
+			        </div>
+			        <div class="panel-body">
+			        	<div class="row">
+				        	<div class="col-md-12 col-lg-12 div-description">
+					            <span data-i18n="filter_upload_request_response">{{variablesTranslate.filter_upload_request_response}}</span>
+					        </div>
+				        </div>
+				        <div class="row espd-verticalAlign">
+					        <div class="col-md-3 col-lg-3">
+					            <input type="file" id="uploadSingleRequest" ng-model="uploadSingleRequest" style="display:none"
+					                   base-sixty-four-input/>
+					            <button class="btn btn-primary ute-responsive-width"
+					                    style="width: auto;" type="button"
+					                    ng-click="upload('uploadSingleRequest')">
+					            	<i class="fa fa-upload"></i>
+									<span ng-show="((operations == 'espd_request' || operations == 'ca_review_espd_response') && userRole != 'eo')">Upload Request</span>
+									<span ng-show="userRole == 'eo' && operations == 'eo_import_espd'">Upload Request / Response</span>
+					            </button>
+					        </div>
+				            <div class="col-md-9 col-lg-9">
+								<span ng-if="uploadSingleRequest!=null" style="margin-left: 10px;"><strong>{{uploadSingleRequest.filename}}</strong></span>
+				            </div>
+				        </div>
+			        </div>
+			    </div>
+	    	</div>
+	    </div>
+
+	    <div class="row" id="tab-multiple-upload"
+			ng-show="userRole == 'eo' && operations == 'eo_merge_espds'">
+	    	<div class="col-md-12 col-lg-12">
+	    		<div class="panel espd-panel">
+			        <div class="espd-heading">
+			        	<span data-i18n="filter_upload_documents">{{variablesTranslate.filter_upload_documents}}</span>
+			        </div>
+			        <div class="panel-body">
+			        	<div class="row">
+				        	<div class="col-md-12 col-lg-12 div-description">
+					            <span data-i18n="filter_upload_request">{{variablesTranslate.filter_upload_request}}</span>
+					        </div>
+				        </div>
+						<div class="row">
+							<div class="col-md-2 col-lg-2">
+					            <file file-model="uploadRequest" ng-model="uploadRequest" style="display:none" id="uploadRequest"/>
+					            <button class="btn btn-primary ute-responsive-width"
+					                    style="width: auto;" type="button"
+					                    ng-click="upload('uploadRequest')">
+					            	<i class="fa fa-upload"></i> <span>Upload Request</span>
+					            </button>
+					        </div>
+				            <div class="col-md-10 col-lg-10">
+				                <span ng-if="uploadRequest!=null" style="margin-left: 10px;">{{uploadRequest.name}}</span>
+				            </div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-lg-12 div-description">
+					            <span data-i18n="filter_upload_response">{{variablesTranslate.filter_upload_response}}</span>
+				        	</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2 col-lg-2">
+					            <file ng-model="uploadResponse" style="display:none" id="uploadSingleResponse"/>
+					            <button class="btn btn-primary ute-responsive-width"
+					                    style="width: auto;" type="button"
+					                    ng-click="upload('uploadSingleResponse')">
+					            	<i class="fa fa-upload"></i> <span>Upload Response</span>
+					            </button>
+					        </div>
+				            <div class="col-md-10 col-lg-10">
+				                <span ng-if="uploadResponse!=null" style="margin-left: 10px;">{{uploadResponse.name}}</span>
+				            </div>
+						</div>
+			        </div>
+			    </div>
+	    	</div>
+	    </div>
+
+	    <div class="row" id="tab-country-selection"
+			ng-show="((operations == 'create_espd_request_or_response') && (userRole == 'ca')) || (operations=='eo_create_espd_response' && userRole=='eo')">
+	    	<div class="col-md-12 col-lg-12">
+		    	<div class="panel espd-panel">
+			    	<div class="espd-heading">
+				    	<span id="where_are_you_from_ca"
+				            ng-show="operations == 'create_espd_request_or_response' && userRole != 'eo'"><span
+				                data-i18n="filter_where_are_you_from_ca">{{variablesTranslate.filter_where_are_you_from_ca}}</span>
+				        </span>
+				        <span id="where_are_you_from_eo" ng-show="userRole == 'eo' && operations=='eo_create_espd_response'">
+				            <span data-i18n="filter_where_are_you_from_eo">{{variablesTranslate.filter_where_are_you_from_eo}}</span>
+				        </span>
+			        </div>
+			        <div class="panel-body">
+				        <div class="row">
+				            <div class="col-md-2 col-lg-2">
+				            	<span data-i18n="filter_select_country">{{variablesTranslate.filter_select_country}}</span>
+				            </div>
+				            <div class="col-md-3 col-lg-3">
+				                <select id="country" ng-model="codeCountry" class="form-control optsorted">
+				                    <option disabled hidden value="">---</option>
+				                    <option ng-repeat="country in countries" value="{{country.iso2Code}}"
+				                            data-i18n="country_{{country.iso2Code}}">{{country.countryName}}
+				                    </option>
+				                </select>
+				            </div>
+				            <div class="col-md-7 col-lg-7"></div>
+				        </div>
+			        </div>
+			    </div>
+	    	</div>
+	    </div>
+
+	    <div static-include template-path="./views/main/buttons.html"></div>
+	</div>
+</div>

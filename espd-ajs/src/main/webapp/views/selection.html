@@ -1,0 +1,266 @@
+<script>
+    $(function () {
+        angular.element("span[data-toggle='tooltip']").tooltip({
+            placement: "top",
+            html: true,
+            trigger: "hover"
+        }).addClass("fa").addClass("fa-info-circle");
+    });
+</script>
+<div>
+    <div>
+        <h2 data-i18n="createcaexcl_header">{{variablesTranslate.createcasel_header}}</h2>
+    </div>
+    <!--<div class="panel espd-panel" ng-if="startVariables.userRole == 'ca'">
+    	<div class="panel-body">
+	    	<span>{{variablesTranslate.createcasel_alert}}</span>
+	        <div class="radio radio-info espd-nopadding">
+	            <span>
+	            {{variablesTranslate.question_to_use_alpha}}
+	            </span>
+	            <span class="espd-marginLeft2em">
+	                <input ng-click="changeCriterionSelected(true)" ng-model="allCriterionsSelected" type="radio"
+	                       ng-value="true" class="radiotab espd-radioSize"/>
+	                <label class="espd-nopadding">{{variablesTranslate.yes}}</label>
+	            </span>
+	            <span class="espd-marginLeft2em">
+	                <input ng-click="changeCriterionSelected(false)" ng-model="allCriterionsSelected" type="radio"
+	                       ng-value="false" class="radiotab espd-radioSize"/>
+	                <label class="espd-nopadding">{{variablesTranslate.no}}</label>
+	            </span>
+	        </div>
+    	</div>
+    </div>-->
+    <div class="panel espd-panel" ng-show="allCriterionsSelected">
+        <div id="criminal_conv_head" class="panel-heading" data-toggle="collapse" data-target="#criminal_conv"
+             ng-click="grounds_criminal_conv= !grounds_criminal_conv">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_grounds_criminal_conv">
+                {{variablesTranslate.createcasel_suitability}}
+            </span>
+        </div>
+        <div id="criminal_conv" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+	                    <span><strong>{{variablesTranslate.crit_selection_eo_suitability_article}}</strong></span>
+	                    <span data-toggle="tooltip"
+	                          data-original-title="{{variablesTranslate.crit_selection_suitability_article_tooltip}}"
+	                          style="font-size: 20px;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.SUITABILITY.PROFESSIONAL_REGISTER_ENROLMENT" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.SUITABILITY.TRADE_REGISTER_ENROLMENT" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.SUITABILITY.AUTHORISATION" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.SUITABILITY.MEMBERSHIP" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel espd-panel" ng-show="allCriterionsSelected">
+        <div id="grounds_payment_tax_header" class="panel-heading" data-toggle="collapse"
+             data-target="#grounds_payment_tax" ng-click="grounds_payment_taxes= !grounds_payment_taxes">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_grounds_payment_taxes">
+                {{variablesTranslate.createcasel_economic_and_financial_standing}}
+            </span>
+        </div>
+        <div id="grounds_payment_tax" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+	                    <span><strong>{{variablesTranslate.crit_selection_ca_economic_article}}</strong></span>
+	                    <span data-toggle="tooltip"
+	                          data-original-title="{{variablesTranslate.crit_selection_economic_financial_standing_article_tooltip}}"
+	                          style="font-size: 20px;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.AVERAGE_YEARLY" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_YEARLY" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SET_UP" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.FINANCIAL_RATIO" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.RISK_INDEMNITY_INSURANCE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.OTHER_REQUIREMENTS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel espd-panel" ng-show="allCriterionsSelected">
+        <div id="insolvency_conflicts_head" class="panel-heading" data-toggle="collapse" data-target="#insolvency_conf"
+             ng-click="insolvency_conflicts= !insolvency_conflicts">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_insolvency_conflicts">
+                {{variablesTranslate.createcasel_technical_professional_ability}}
+            </span>
+        </div>
+        <div id="insolvency_conf" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <span><strong>{{variablesTranslate.crit_selection_technical_professional_ability_article}}</strong></span>
+                        <span data-toggle="tooltip"
+                              data-original-title="{{variablesTranslate.crit_selection_economic_financial_standing_article_tooltip}}"
+                              style="font-size: 20px;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.REFERENCES.WORKS_PERFORMANCE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.REFERENCES.SUPPLIES_DELIVERY_PERFORMANCE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.REFERENCES.SERVICES_DELIVERY_PERFORMANCE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.TECHNICIANS_FOR_QUALITY_CONTROL" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.TECHNICIANS_FOR_CARRYING_WORKS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.FACILITIES_FOR_QUALITY_ENSURING" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.FACILITIES_FOR_STUDY_RESEARCH" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.SUPPLY_CHAIN_MANAGEMENT" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.ENVIRONMENTAL_MANAGEMENT_MEASURES" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.CHECKS.ALLOWANCE_OF_CHECKS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.MANAGERIAL_STAFF" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.PROFESSIONAL_QUALIFICATIONS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.TECHNICAL.EQUIPMENT" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.AVERAGE_ANNUAL_MANPOWER" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.SUBCONTRACTING_PROPORTION" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.ARTEFACTS.NO_AUTHENTICATED_ARTEFACTS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.ARTEFACTS.AUTHENTICATED_ARTEFACTS" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.CERTIFICATES.QUALITY_ASSURANCE.QA_INSTITUTES_CERTIFICATE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel espd-panel" ng-show="allCriterionsSelected">
+        <div id="purely_national_head" class="panel-heading" data-toggle="collapse" data-target="#purely_natio"
+             ng-click="purely_national= !purely_national">
+            <span class="espd-marginLeft1em" data-i18n="crit_top_title_purely_national">
+                {{variablesTranslate.createcasel_quality_assurance}}
+            </span>
+        </div>
+        <div id="purely_natio" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <span><strong>{{variablesTranslate.crit_selection_quality_assurance_article}}</strong></span>
+                        <span data-toggle="tooltip"
+                              data-original-title="{{variablesTranslate.crit_selection_economic_financial_standing_article_tooltip}}"
+                              style="font-size: 20px;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.CERTIFICATES.QUALITY_ASSURANCE.QA_INDEPENDENT_CERTIFICATE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.CERTIFICATES.ENVIRONMENTAL_MANAGEMENT.ENV_INDEPENDENT_CERTIFICATE" class="col-md-12 col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel espd-panel" ng-show="!allCriterionsSelected">
+        <div id="selection_switch_head" class="panel-heading" data-toggle="collapse" data-target="#selection_switch">
+            <span>{{variablesTranslate.all_selection_switch}}</span>
+        </div>
+        <div id="selection_switch" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+	                    <span>{{variablesTranslate.crit_selection_ca_declares_that}}</span>
+                    </div>
+                </div>
+	            <div class="row">
+	                <div class="col-md-12 col-lg-12">
+	                	<input class="ng-pristine ng-untouched ng-valid ng-not-empty" type="checkbox" ng-disabled="true" checked/>
+	                	<span>{{variablesTranslate.crit_selection_satisfies_all_criteria}}</span>
+	                </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+    <div static-include template-path="./views/main/buttons.html"></div>
+</div>
+
+<div static-include template-path="./views/sidenav/sidenav.html"></div>
+<div static-include template-path="./views/modals/cancelModal.html"></div>

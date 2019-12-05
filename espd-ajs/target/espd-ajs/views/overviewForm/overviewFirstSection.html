@@ -1,0 +1,417 @@
+<script>
+  $(function () {
+    angular.element("span[data-toggle='tooltip']").tooltip({
+      placement: "top",
+      html: true,
+      trigger: "hover"
+    }).addClass("fa").addClass("fa-info-circle");
+  });
+</script>
+
+<div id="errorMessage" class="row espd-nomargin">
+    <div ng-show="formError" class="col-lg-12 alert espd-alert-danger espd-nomargin">
+        <span class="espd-alert-danger-text" data-i18n="espd_upload_error">{{variablesTranslate.invalid_form_tooltip}}</span>
+    </div>
+</div>
+
+<form id="firstSectionForm" novalidate>
+    <div>
+        <h2 data-i18n="createca_header">{{variablesTranslate.createca_header}}</h2>
+    </div>
+
+    <div class="panel espd-panel">
+        <div id="infoCa" class="panel-heading" data-toggle="collapse" data-target="#ojsdiv">
+	        <span class="espd-marginLeft1em" data-i18n="createca_info_pub">
+	            {{variablesTranslate.createca_info_pub}}
+	        </span>
+        </div>
+        <div id="ojsdiv" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                		<span data-i18n="createca_to_be_filled_alert">{{variablesTranslate.createca_to_be_filled_alert}}</span>
+                    </div>
+                </div>
+                <div class="row">
+	                <div class="col-md-12 col-lg-12 espd-publicationsInfo"
+	                     ng-repeat="info in applicationJson.additionalDocumentReferenceModels">
+	                	<div class="row">
+	                		<div class="col-md-12 col-lg-12">
+                                <div class="panel espd-panel">
+                                    <div class="panel-body">
+                                        <div class="form-horizontal">
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                                data-i18n="createca_type_of_document">{{variablesTranslate.createca_type_of_document}}</span></label>
+					                            <div class="col-md-8 childValidation">
+					                                <input disabled
+					                                       ng-model="info.documentTypeCodeModel.docRefContentType.translation" type="text"
+					                                       class="form-control" id="name"/>
+					                                <span class="valid-feedback-error" data-i18n="validator_required">
+					                                    {{variablesTranslate.validator_required}}</span>
+					                            </div>
+					                        </div>
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                            	data-i18n="createca_name_pub">{{variablesTranslate.createca_name_pub}}</span></label>
+					                            <div class="col-md-8">
+					                                <input disabled
+					                                       ng-model="info.attachmentModel.externalReferenceModel.fileName" type="text"
+					                                       class="form-control" id="name"/>
+					                            </div>
+					                        </div>
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                            	data-i18n="createca_desc_pub">{{variablesTranslate.createca_desc_pub}}</span></label>
+					                            <div class="col-md-8">
+					                                <input disabled
+					                                       ng-model="info.attachmentModel.externalReferenceModel.descriptionModels[0].description"
+					                                       type="text" class="form-control"
+					                                       id="description"/>
+					                            </div>
+					                        </div>
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                            	data-i18n="createca_ted_reception_id">{{variablesTranslate.createca_ted_reception_id}}</span></label>
+					                            <div class="col-md-8">
+					                                <input disabled
+					                                       ng-model="info.attachmentModel.externalReferenceModel.descriptionModels[1].description"
+					                                       type="text" class="form-control"
+					                                       data-i18n="createca_ted_reception_id"
+					                                       id="tempRecNumber"/>
+					                            </div>
+					                        </div>
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                            	data-i18n="createca_ojs_label">{{variablesTranslate.createca_ojs_label}}</span></label>
+					                            <div class="col-md-8">
+					                                <input disabled ng-model="info.idModel.id"
+					                                       type="text" class="form-control"
+					                                       path="ojsNumber"
+					                                       id="ojsNumber"/>
+					                            </div>
+					                        </div>
+					                        <div class="form-group">
+					                            <label class="col-md-4 control-label"><span
+					                            	data-i18n="createca_ojs_url">{{variablesTranslate.createca_ojs_url}}</span></label>
+					                            <div class="col-md-8">
+					                                <textarea disabled
+					                                          ng-model="info.attachmentModel.externalReferenceModel.uriModel.uri"
+					                                          class="form-control"></textarea>
+					                            </div>
+					                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+	                		</div>
+	                	</div>
+	                </div>
+                </div>
+                <div class="row">
+	                <div class="col-md-12 col-lg-12">
+	                    <span data-i18n="createca_official_journal_alert">{{variablesTranslate.createca_official_journal_alert}}</span>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel espd-panel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#cadiv" ng-click="cadiv = !cadiv">
+            <span class="espd-marginLeft1em" data-i18n="createca_contact_details_ca">{{variablesTranslate.createca_contact_details_ca}}</span>
+        </div>
+        <div id="cadiv" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_name">{{variablesTranslate.createca_name}}</span></label>
+                            <div class="childValidation">
+                    			<textarea ng-model="applicationJson.contractingPartyModels[0].partyModel.partyNameModels[0].name"
+	                              rows="1" class="form-control valid-feedback" path="authority.name"
+	                              disabled required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_fiscal_code">{{variablesTranslate.createca_fiscal_code}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.partyIdentificationModels[0].idModel.id"
+	                               class="form-control" maxlength="11"
+	                               data-i18n="filter_ted_reception_id_placeholder" disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_url_comm">{{variablesTranslate.createca_url_comm}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].buyerProfileUriModel.buyerProfileUri"
+	                               class="form-control"
+	                               data-i18n="filter_ted_reception_id_placeholder" disabled/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label" data-i18n="createca_country">{{variablesTranslate.createca_country}}</label>
+                            <div class="childValidation">
+                                <input type="text" id="country"
+                                       ng-model="applicationJson.contractingPartyModels[0].partyModel.addressModel.countryModel.name"
+                                       class="form-control" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_street_and_num">{{variablesTranslate.createca_street_and_num}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.addressModel.streetName"
+	                               class="form-control"
+	                               data-i18n="createca_street_and_num_placeholder" disabled/>
+                       	</div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_city">{{variablesTranslate.createca_city}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.addressModel.cityName"
+	                               class="form-control"
+	                               data-i18n="createca_city_placeholder" disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_postcode">{{variablesTranslate.createca_postcode}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.addressModel.postalZone"
+	                               class="form-control"
+	                               data-i18n="createca_postcode_placeholder" disabled/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_contact_person">{{variablesTranslate.createca_contact_person}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.contactModel.name"
+	                               class="form-control"
+	                               data-i18n="createca_contact_person_placeholder" disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                    	<div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_telephone">{{variablesTranslate.createca_telephone}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.contactModel.telephone"
+	                               class="form-control"
+	                               data-i18n="createca_telephone_placeholder" disabled/>
+                    	</div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                    	<div class="form-group">
+	                        <label class="control-label"><span
+	                                data-i18n="createca_fax">{{variablesTranslate.createca_fax}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.contactModel.telefax"
+	                               class="form-control"
+	                               data-i18n="createca_fax_placeholder" disabled/>
+                    	</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                    	<div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_email">{{variablesTranslate.createca_email}}</span></label>
+	                        <input type="text"
+	                               ng-model="applicationJson.contractingPartyModels[0].partyModel.contactModel.email"
+	                               class="form-control"
+	                               data-i18n="createca_email_placeholder" disabled/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel espd-panel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#ppdiv">
+            <span class="espd-marginLeft1em" data-i18n="createca_info_procurement_proc">{{variablesTranslate.createca_info_procurement_proc}}</span>
+        </div>
+        <div id="ppdiv" class="collapse in">
+            <div class="panel-body">
+            	<div class="row">
+            		<div class="col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="control-label"><span data-i18n="createca_procurer_simog">*{{variablesTranslate.createca_procurer_simog}}</span></label>
+                                    <div class="childValidation">
+			                            <input type="text"
+			                                   data-i18n="createca_procurer_simog_placeholder" class="form-control valid-feedback"
+			                                   ng-model="applicationJson.procurementProjectModel.idModel.id" disabled/>
+                                        <span class="valid-feedback-error" data-i18n="validator_required">
+                                            {{variablesTranslate.validator_required}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            			<div class="row">
+            				<div class="col-md-12 col-lg-12">
+			                    <div class="form-group">
+			                        <label class="control-label"><span data-i18n="createca_procurer_name">{{variablesTranslate.createca_procurer_name}}</span></label>
+			                        <div class="childValidation">
+			                            <input type="text"
+			                                   data-i18n="createca_procurer_name_placeholder" class="form-control valid-feedback"
+			                                   ng-model="applicationJson.procurementProjectModel.names[0]" disabled/>
+			                        </div>
+			                    </div>
+            				</div>
+            			</div>
+            			<div class="row">
+            				<div class="col-md-12 col-lg-12">
+			                    <div class="form-group">
+			                        <label class="control-label"><span data-i18n="createca_file_ref_ca">{{variablesTranslate.createca_file_ref_ca}}</span></label>
+			                        <div class="childValidation">
+			                            <input class="form-control" type="text"
+			                                   data-i18n="createca_file_ref_ca_placeholder"
+			                                   ng-model="applicationJson.contractFolderIDModel.referenceNumber" disabled/>
+
+			                        </div>
+			                    </div>
+            				</div>
+            			</div>
+            		</div>
+            		<div class="col-md-6 col-lg-6">
+	                    <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_title_or_short_desc">{{variablesTranslate.createca_title_or_short_desc}}</span></label>
+	                        <div class="childValidation">
+	                    		<textarea style="resize: none"
+	                              ng-model="applicationJson.procurementProjectModel.descriptionModels[0].description"
+	                              rows="7"
+	                              cols="20"
+	                              class="form-control" data-i18n="createca_title_or_short_desc_placeholder"
+	                              disabled></textarea>
+	                        </div>
+	                    </div>
+            		</div>
+            	</div>
+                <div class="row">
+                	<div class="col-md-6 col-lg-6">
+                		<div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_objects_of_contract">{{variablesTranslate.createca_objects_of_contract}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control" type="text"
+                                       ng-model="applicationJson.procurementProjectModel.procurementTypeCodeModel.projectType.name"
+                                       disabled/>
+                            </div>
+                		</div>
+                	</div>
+                	<div class="col-md-6 col-lg-6">
+                		<div class="form-group">
+                             <label class="control-label"><span data-i18n="createca_type_of_procedure">
+                                {{variablesTranslate.createca_type_of_procedure}}</span></label>
+                             <div class="childValidation">
+                                 <input class="form-control" type="text"
+                                        ng-model="applicationJson.procedureCodeModel.procedureType.name" disabled/>
+                             </div>
+                		</div>
+                	</div>
+                </div>
+                <div class="row" style="padding-bottom: 1em;">
+                	<div class="col-md-6 col-lg-6">
+	                    <div class="row form-group espd-nomargin">
+	                        <label class="control-label"><span data-i18n="createca_code_cpv">{{variablesTranslate.createca_code_cpv}}</span></label>
+                            <div class="col-lg-12 espd-cpvCodesSection">
+                                <div class="row espd-cpvTableHeader"
+                                     ng-show="applicationJson.procurementProjectModel.mainCommodityClassificationModels.length>0">
+                                     <div class="col-lg-5 espd-cpvTableHeaderSeparator">
+                                         {{variablesTranslate.crit_code}}
+                                     </div>
+                                     <div class="col-lg-7">
+                                         {{variablesTranslate.crit_description}}
+                                     </div>
+                                </div>
+                                <div class="row">
+                                	<div class="col-lg-12">
+		                                <div ng-repeat="cpvCode in applicationJson.procurementProjectModel.mainCommodityClassificationModels">
+		                                    <div style="height: 3em;"
+                                                 class="row espd-verticalAlign espd-cpvTableHeaderLineSeparatorBottom">
+	                                            <div class="col-lg-5">
+	                                            	<span>{{cpvCode.itemClassificationCodeModel.itemClassificationCode}}</span>
+	                                            </div>
+	                                            <div class="col-lg-7 espd-truncateWord"
+	                                                 title="{{cpvCode.itemClassificationCodeModel.name}}"><span>{{cpvCode.itemClassificationCodeModel.name}}</span>
+	                                            </div>
+                                            </div>
+		                                </div>
+		                                <div ng-if="applicationJson.procurementProjectModel.mainCommodityClassificationModels.length == 0">
+		                                    <label class="control-label espd-nomargin"><span data-i18n="createca_code_cpv_placeholder">{{variablesTranslate.createca_code_cpv_placeholder}}</span></label>
+		                                </div>
+                                	</div>
+                                </div>
+                            </div>
+	                    </div>
+                	</div>
+                    <div class="col-md-6 col-lg-6">
+	                    <div class="row form-group espd-nomargin">
+	                        <label class="control-label"><span data-i18n="createca_code_cpv">{{variablesTranslate.createca_code_lots}}</span></label>
+                            <div class="col-lg-12 espd-cpvCodesSection">
+                                <div class="row espd-cpvTableHeader"
+                                     ng-show="applicationJson.procurementProjectLotModels.length>0">
+                                     <div class="col-lg-12">
+                                         {{variablesTranslate.crit_code_cig}}
+                                     </div>
+                                </div>
+                                <div class="row">
+                                	<div class="col-lg-12">
+		                                <div ng-repeat="lotsCig in applicationJson.procurementProjectLotModels track by $index">
+		                                    <div style="height: 3em;"
+                                                 class="row espd-verticalAlign espd-cpvTableHeaderLineSeparatorBottom">
+                                                <div class="col-md-12">
+	                                                <span>{{lotsCig.idModel.id}}</span>
+                                                </div>
+                                            </div>
+		                                </div>
+		                                <div ng-if="applicationJson.procurementProjectLotModels.length == 0">
+		                                    <label class="control-label espd-nomargin"><span data-i18n="createca_code_lots_placeholder">{{variablesTranslate.createca_code_lots_placeholder}}</span></label>
+		                                </div>
+                                	</div>
+                                </div>
+                            </div>
+	                    </div>
+            		</div>
+                </div>
+                <div class="row" ng-show="startVariables.userRole == 'ca'">
+                    <div class="col-md-3 col-lg-3">
+	                    <div class="form-group">
+	                        <label class="control-label"><span data-i18n="createca_lotti">{{variablesTranslate.createca_lotti}}</span></label>
+	                        <div class="row">
+	                        	<div class="col-md-10">
+		                            <input type="number" min="0" data-i18n="createca_procurer_name_placeholder" disabled
+		                                   class="form-control"
+		                                   ng-model="applicationJson.procurementProjectLotModels.length"/>
+	                        	</div>
+	                        	<div class="col-md-2 espd-nopadding">
+		                            <span data-i18n="createca_num_lots_info" data-toggle="tooltip"
+		                                  data-original-title="{{variablesTranslate.createca_num_lots_info}}"
+		                                  style="font-size:22px; font-size: 22px;"></span>
+	                            </div>
+	                        </div>
+	                    </div>
+                    </div>
+	                <div class="col-md-9 col-lg-9" ng-show="criterionSelection[rebuildCriterion('CRITERION.OTHER.CA_DATA.LOTS_SUBMISSION')]">
+	                    <div id="CRITERION.OTHER.CA_DATA.LOTS_SUBMISSION" class="row" ng-show="applicationJson.procurementProjectLotModels.length>1">
+	                    </div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

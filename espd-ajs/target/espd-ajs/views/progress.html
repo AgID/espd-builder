@@ -1,0 +1,96 @@
+<!-- <div class="hidden-print">
+	<div class="row">
+		<div class="col-md-12 col-lg-12">
+		    <ul class="nav nav-pills nav-wizard nav-justified">
+		        <li ng-class="{'active': $parent.checkProgress() == 1,'visited':$parent.checkMaxProgress()>=1}"
+		            ng-click="changeState(1)" ng-style="{'cursor':$parent.checkMaxProgress()>=1 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-random"></i>&nbsp;<span
+		                    data-i18n="progress_start">{{variablesTranslate.progress_start}}</span></a>
+		            <div class="nav-arrow"></div>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 2,'visited':$parent.checkMaxProgress()>=2}"
+		            ng-click="changeState(2)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=2 ? 'pointer' : 'not-allowed'}">
+		            <div class="nav-wedge"></div>
+		            <a><i class="fa fa-university"></i>&nbsp;<span data-i18n="progress_procedure">{{variablesTranslate.progress_procedure}}</span></a>
+		            <div class="nav-arrow"></div>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 3,'visited':$parent.checkMaxProgress()>=3}"
+		            ng-click="changeState(3)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=3 ? 'pointer' : 'not-allowed'}">
+		            <div class="nav-wedge"></div>
+		            <a><i class="fa fa-exclamation"></i>&nbsp;<span data-i18n="progress_exclusion">{{variablesTranslate.progress_exclusion}}</span></a>
+		            <div class="nav-arrow"></div>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 4,'visited':$parent.checkMaxProgress()>=4}"
+		            ng-click="changeState(4)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=4 ? 'pointer' : 'not-allowed'}">
+		            <div class="nav-wedge"></div>
+		            <a><i class="fa fa-check-circle"></i>&nbsp;<span data-i18n="progress_selection">{{variablesTranslate.progress_selection}}</span></a>
+		            <div class="nav-arrow"></div>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 5,'visited':$parent.checkMaxProgress()>=5}"
+		            ng-click="changeState(5)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=5 ? 'pointer' : 'not-allowed'}">
+		            <div class="nav-wedge"></div>
+		            <a><i class="fa fa-download"></i>&nbsp;<span data-i18n="progress_finish">{{variablesTranslate.progress_finish}}</span></a>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+</div>-->
+
+<!-- TEST -->
+<div class="hidden-print">
+	<div class="row">
+		<div class="col-md-12 col-lg-12" style="padding-top: 10px; padding-bottom: 5px;">
+		    <ul class="nav nav-pills nav-justified">
+		        <li ng-class="{'active': $parent.checkProgress() == 1,'visited':$parent.checkMaxProgress()>=1}"
+		            ng-click="changeState(1)" ng-style="{'cursor':$parent.checkMaxProgress()>=1 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-2x fa-random" style="margin-left: -1px; margin-top: 5px;"></i></a>
+		            <span data-i18n="progress_start">{{variablesTranslate.progress_start}}</span>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 2,'visited':$parent.checkMaxProgress()>=2}"
+		            ng-click="changeState(2)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=2 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-2x fa-university" style="margin-left: -2px; margin-top: 3px;"></i></a>
+		            <span data-i18n="progress_procedure">{{variablesTranslate.progress_procedure}}</span>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 3,'visited':$parent.checkMaxProgress()>=3}"
+		            ng-click="changeState(3)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=3 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-2x fa-exclamation" style="margin-left: 1px; margin-top: 5px;"></i></a>
+		            <span data-i18n="progress_exclusion">{{variablesTranslate.progress_exclusion}}</span>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 4,'visited':$parent.checkMaxProgress()>=4}"
+		            ng-click="changeState(4)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=4 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-2x fa-check-circle" style="margin-left: 1px; margin-top: 3px;"></i></a>
+		            <span data-i18n="progress_selection">{{variablesTranslate.progress_selection}}</span>
+		        </li>
+		        <li ng-class="{'active': $parent.checkProgress() == 5,'visited':$parent.checkMaxProgress()>=5}"
+		            ng-click="changeState(5)"
+		            ng-style="{'cursor':$parent.checkMaxProgress()>=5 ? 'pointer' : 'not-allowed'}">
+		            <a><i class="fa fa-2x fa-download" style="margin-top: 5px;"></i></a>
+		            <span data-i18n="progress_finish">{{variablesTranslate.progress_finish}}</span>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12 col-lg-12">
+		<div class="progress">
+		    <div class="progress-bar active" role="progressbar"
+		         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+		         data-ng-class="{'espd-width20':$parent.checkMaxProgress()==1,
+		        'espd-width40':$parent.checkMaxProgress()==2,
+		        'espd-width60':$parent.checkMaxProgress()==3,
+		        'espd-width80':$parent.checkMaxProgress()==4,
+		        'espd-width100':$parent.checkMaxProgress()==5}">
+		        {{$parent.checkMaxProgress()*10*2}}%
+		    </div>
+		</div>
+	</div>
+</div>

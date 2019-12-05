@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <description>The ESPD service is a web-based solution which allows the European Member States and European Institutions
+        to exchange structured e-procurement information in a harmonised manner. The system is not a persistent storage
+        but rather a transformation service which enables the management of XML based documents for each procurement submitted.</description>
+  <display-name>espd-ear</display-name>
+  <module>
+    <web>
+      <web-uri>espd-service-1.0.war</web-uri>
+      <context-root>/espd-service</context-root>
+    </web>
+  </module>
+  <module>
+    <web>
+      <web-uri>espd-ajs-1.0.war</web-uri>
+      <context-root>/espd-dgue</context-root>
+    </web>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

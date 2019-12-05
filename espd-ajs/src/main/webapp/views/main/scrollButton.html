@@ -1,0 +1,24 @@
+<script>
+    $(function () {
+        angular.element("i[data-toggle='tooltip']").tooltip({
+            placement: "top",
+            html: true,
+            trigger: "hover"
+        });
+        angular.element("i[data-toggle='tooltip']").on('click', function(){
+            angular.element("i[data-toggle='tooltip']").tooltip("hide");
+        });
+    });
+</script>
+<div id="scrollDiv" ng-show="checkProgress() > 1">
+    <div ng-show="showMenu()" id="scrollTopButton">
+        <i class="fa fa-bars fa-lg espd-scroll-button espd-scroll-button-up" data-toggle="tooltip"
+           data-original-title="Menu"
+           ng-click="MainService.openSidenav();sidenavOpened = true"></i>
+    </div>
+    <div id="scrollDownButton" ng-show="!bottomPage">
+        <i class="fa fa-chevron-down fa-lg espd-scroll-button espd-scroll-button-down" data-toggle="tooltip"
+           data-i18n="tooltip_scroll_button" data-original-title="{{variablesTranslate.tooltip_scroll_button}}"
+           ng-click="scrollButtons()"></i>
+    </div>
+</div>

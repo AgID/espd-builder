@@ -1,0 +1,491 @@
+<script>
+  $(function () {
+    angular.element("span[data-toggle='tooltip']").tooltip({
+      placement: "top",
+      html: true,
+      trigger: "hover"
+    }).addClass("fa").addClass("fa-info-circle");
+  });
+</script>
+<form id="secondSectionForm" name="secondSectionForm" novalidate>
+    <div>
+        <h2 data-i18n="createeo_header">{{variablesTranslate.createeo_header}}</h2>
+    </div>
+
+    <div class="panel espd-panel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#createeo_info_eo_div"
+             ng-click="createInfoEo = !createInfoEo">
+            <span class="espd-marginLeft1em" data-i18n="createeo_info_eo">
+            	{{variablesTranslate.createeo_info_eo}}
+            </span>
+        </div>
+        <div id="createeo_info_eo_div" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label">
+                                <span data-i18n="createeo_eo_group_role">{{variablesTranslate.createeo_eo_group_role}}</span>
+                                <span data-toggle="tooltip"
+                                      data-original-title="{{applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleDescriptions[0]}}"
+                                      style="font-size: 18px;"
+                                      ng-class="(applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleDescriptions[0] == undefined || applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleDescriptions[0] == '') ? 'espd-lightpinkColor' : 'espd-purpleColor'"></span>
+                            </label>
+                            <div class="childValidation">
+                                <select ng-change="applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleDescriptions[0] = roleTypeList[CommonService.getIndexOnList(applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.code,roleTypeList)].description;
+                                                   applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.name = roleTypeList[CommonService.getIndexOnList(applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.code,roleTypeList)].translation;"
+                                        class="form-control valid-feedback"
+                                        ng-model="applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.code">
+                                    <option disabled hidden value="">---</option>
+                                    <option ng-value="roleType.code" ng-repeat="roleType in roleTypeList"
+                                            ng-show="roleType.status=='ACTIVE'">
+                                        {{roleType.translation}}
+                                    </option>
+                                </select>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_email">
+                                {{variablesTranslate.createca_email}}</span></label>
+                            <div class="childValidation ">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.endPointIDModel.endPointID"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_email_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_name">{{variablesTranslate.createeo_name}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.partyNameModels[0].name"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_name_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_telephone">{{variablesTranslate.createca_telephone}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.contactModel.telephone"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_telephone_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_street_and_num">{{variablesTranslate.createca_street_and_num}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.addressLineModels[0].line"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_street_and_num_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_contact_person">{{variablesTranslate.createeo_contact_person}}</span></label>
+                            <div class="childValidation">
+                                <input ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.contactModel.name"
+                                       class="form-control valid-feedback"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_contact_person_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_postcode">{{variablesTranslate.createca_postcode}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.postalZone"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_postcode_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_vat">{{variablesTranslate.createeo_vat}}</span></label>
+                            <div class="childValidation">
+                                <input id="createeo_vat" type="text" class="form-control valid-feedback"
+                                       allow-pattern="^(0|[1-9][0-9]*)$"
+                                       maxlength="11"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.partyIdentificationModels[0].idModel.id"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_vat_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_city">{{variablesTranslate.createca_city}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.cityName"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_city_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label">
+                                <span data-i18n="createeo_another_vat_label">{{variablesTranslate.createeo_another_vat_label}}</span>
+                                <span data-toggle="tooltip" data-i18n="createeo_another_vat"
+                                      data-original-title="{{variablesTranslate.createeo_another_vat}}"
+                                      style="font-size: 18px;">
+                                </span>
+                            </label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback" id="createeo_another_vat"
+                                       ng-model="anotherVat"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_another_vat_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_country">{{variablesTranslate.createca_country}}</span></label>
+                            <div class="childValidation">
+                                <select ng-change="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.countryModel.name = countries[CommonService.getCountryIndex(applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.countryModel.identificationCodeModel.countryCodeIdentifier.code,countries)].countryName"
+                                        ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.countryModel.identificationCodeModel.countryCodeIdentifier.code"
+                                        class="form-control optsorted valid-feedback">
+                                    <option disabled hidden value="">---</option>
+                                    <option ng-repeat="country in countries" ng-value="country.iso2Code"
+                                            ng-click="applicationJson.economicOperatorPartyModels[0].partyModel.addressModel.countryModel.identificationCodeModel.countryCodeIdentifier.name = country.name"
+                                            data-i18n="country_{{country.iso2Code}}">{{country.countryName}}
+                                    </option>
+                                </select>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_internet_addr_if_exists">{{variablesTranslate.createeo_internet_addr_if_exists}}</span></label>
+                            <input class="form-control"
+                                   ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.websiteUriModel.websiteUri"
+                                   ng-attr-placeholder="{{variablesTranslate.createeo_internet_addr_if_exists_placeholder}}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_is_eo_sized">{{variablesTranslate.createeo_is_eo_sized}}</span></label>
+                            <select ng-model="applicationJson.economicOperatorPartyModels[0].partyModel.industryClassificationCodeModel.eoIndustryClassificationCode.code"
+                                    ng-change="applicationJson.economicOperatorPartyModels[0].partyModel.industryClassificationCodeModel.eoIndustryClassificationCode.name = eoIndustryClassificationCodeList[CommonService.getIndexOnList(applicationJson.economicOperatorPartyModels[0].partyModel.industryClassificationCodeModel.eoIndustryClassificationCode.code,eoIndustryClassificationCodeList)].translation"
+                                    class="form-control optsorted valid-feedback">
+                                <option disabled hidden value="">---</option>
+                                <option ng-repeat="companyType in eoIndustryClassificationCodeList"
+                                        ng-value="companyType.code"
+                                        ng-show="companyType.status == 'ACTIVE'">
+                                    {{companyType.translation}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_employees_number">{{variablesTranslate.createeo_employees_number}}</span></label>
+                            <input type="number" class="form-control" min="0"
+                                   ng-model="applicationJson.economicOperatorPartyModels[0].qualifyingPartyModels[0].employeeQuantityModel.employeeQuantity"
+                                   data-i18n="createeo_employees_number_placeholder"
+                                   ng-attr-placeholder="{{variablesTranslate.createeo_employees_number_placeholder}}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span
+                                    data-i18n="crit_selection_economic_average_yearly_turnover_main">{{variablesTranslate.crit_selection_economic_average_yearly_turnover_main}}</span></label>
+                            <input type="number" class="form-control" min="0"
+                                   ng-model="applicationJson.economicOperatorPartyModels[0].qualifyingPartyModels[0].financialCapabilityModels[0].valueAmountModel.valueAmount"
+                                   data-i18n="crit_selection_economic_average_yearly_turnover_main_placeholder"
+                                   ng-attr-placeholder="{{variablesTranslate.crit_selection_economic_average_yearly_turnover_main_placeholder}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_currency">{{variablesTranslate.createeo_currency}}</span></label>
+                            <select class="form-control"
+                                    ng-model="applicationJson.economicOperatorPartyModels[0].qualifyingPartyModels[0].financialCapabilityModels[0].valueAmountModel.currencyID">
+                                <option value hidden disabled>---</option>
+                                <option ng-repeat="currency in currencyType" ng-value="currency.code"
+                                        ng-show="currency.status=='ACTIVE'">
+                                    {{currency.code}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="CRITERION.OTHER.EO_DATA.SHELTERED_WORKSHOP" class="row"></div>
+                <div id="CRITERION.OTHER.EO_DATA.REGISTERED_IN_OFFICIAL_LIST" class="row"></div>
+                <div id="CRITERION.OTHER.EO_DATA.TOGETHER_WITH_OTHERS" class="row"></div>
+                <div id="CRITERION.OTHER.EO_DATA.LOTS_TENDERED" class="row"></div>
+                <!-- <div id="CRITERION.OTHER.EO_DATA.CONTRIBUTIONS_CERTIFICATES" class="row"></div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="panel espd-panel"
+         ng-repeat="rappresentante in applicationJson.economicOperatorPartyModels[0].partyModel.powerOfAttorneyModels">
+        <div class="panel-heading" data-toggle="collapse" data-target="#createeo_info_respresent_div{{$index}}"
+             ng-click="createInfoRespresent[$index] = !createInfoRespresent[$index]"
+             ng-click="createInfoRespresent[$index] = !createInfoRespresent[$index]"
+             style="position: relative; height: 3em;">
+            <span class="espd-marginLeft1em" data-i18n="createeo_info_respresent">{{variablesTranslate.createeo_info_respresent}} {{$index+1}}</span>
+            <div style="position: absolute; right: 1%; top: 9%;">
+                <button ng-if="applicationJson.economicOperatorPartyModels[0].partyModel.powerOfAttorneyModels.length>1"
+                        type="button" class="btn espd-btn-secondario"
+                        style="float: right;"
+                        ng-click="applicationJson.economicOperatorPartyModels[0].partyModel.powerOfAttorneyModels.splice($index,1);$event.stopPropagation()">
+                    <span class="fa fa-trash"></span></button>
+                <button type="button" class="btn espd-btn-secondario" style="float: right;"
+                        ng-click="addRappresentante();$event.stopPropagation()"><span class="fa fa-plus"></span>
+                </button>
+            </div>
+        </div>
+        <div id="createeo_info_respresent_div{{$index}}" class="collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_name_pub">{{variablesTranslate.createca_name_pub}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].firstName"
+                                       data-i18n="createca_name_pub_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_name_pub_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_last_name">{{variablesTranslate.createeo_last_name}}</span></label>
+                            <div class="childValidation">
+                                <input class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].familyName"
+                                       data-i18n="createeo_last_name_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_last_name_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_birth_date">{{variablesTranslate.createeo_birth_date}}</span></label>
+                            <div class="childValidation">
+                                <input type="date" class="form-control valid-feedback" date-input
+                                       placeholder="dd/mm/yyyy"
+                                       ng-style="{'color': rappresentante.agentPartyModel.personModels[0].birthDate==null ? 'grey' :'#555'}"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].birthDate"
+                                       data-i18n="createeo_birth_date_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_birth_date_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_birth_place">{{variablesTranslate.createeo_birth_place}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].birthplaceName"
+                                       data-i18n="createeo_birth_place_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_birth_place_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_street_and_num">{{variablesTranslate.createca_street_and_num}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].residenceAddressModel.addressLineModels[0].line"
+                                       data-i18n="createca_street_and_num_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_street_and_num_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_postcode">{{variablesTranslate.createca_postcode}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].residenceAddressModel.postalZone"
+                                       data-i18n="createca_postcode_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_postcode_placeholder}}"/>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_city">{{variablesTranslate.createca_city}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].residenceAddressModel.cityName"
+                                       data-i18n="createca_city_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_city_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_country">{{variablesTranslate.createca_country}}</span></label>
+                            <div class="childValidation">
+                                <select ng-model="rappresentante.agentPartyModel.personModels[0].residenceAddressModel.countryModel.identificationCodeModel.countryCodeIdentifier.code"
+                                        ng-change="rappresentante.agentPartyModel.personModels[0].residenceAddressModel.countryModel.name = countries[CommonService.getCountryIndex(rappresentante.agentPartyModel.personModels[0].residenceAddressModel.countryModel.identificationCodeModel.countryCodeIdentifier.code,countries)].countryName"
+                                        class="form-control optsorted valid-feedback">
+                                    <option disabled hidden value="">---</option>
+                                    <option ng-repeat="country in countries" value="{{country.iso2Code}}"
+                                            data-i18n="country_{{country.iso2Code}}">{{country.countryName}}
+                                    </option>
+                                </select>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_telephone">{{variablesTranslate.createca_telephone}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].contactModel.telephone"
+                                       data-i18n="createca_telephone_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_telephone_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createca_email">{{variablesTranslate.createca_email}}</span></label>
+                            <div class="childValidation">
+                                <input type="email" class="form-control valid-feedback"
+                                       ng-model="rappresentante.agentPartyModel.personModels[0].contactModel.email"
+                                       data-i18n="createca_email_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createca_email_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_pos_act_in_capacity">{{variablesTranslate.createeo_pos_act_in_capacity}}</span></label>
+                            <div class="childValidation">
+                                <input type="text" class="form-control valid-feedback"
+                                       ng-model="rappresentante.descriptionModels[0].description"
+                                       data-i18n="createeo_pos_act_in_capacity_placeholder"
+                                       ng-attr-placeholder="{{variablesTranslate.createeo_pos_act_in_capacity_placeholder}}">
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label"><span data-i18n="createeo_detinfo_of_represent">{{variablesTranslate.createeo_detinfo_of_represent}}</span></label>
+                            <div class="childValidation">
+                            	<textarea rows="5" class="form-control valid-feedback"
+                                          ng-model="rappresentante.descriptionModels[1].description"
+                                          data-i18n="createeo_detinfo_of_represent_placeholder"
+                                          ng-attr-placeholder="{{variablesTranslate.createeo_detinfo_of_represent_placeholder}}"></textarea>
+                                <span class="valid-feedback-error" data-i18n="validator_required">
+                                    {{variablesTranslate.validator_required}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel espd-panel"
+         ng-show="applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.code =='SC'
+         		||	applicationJson.economicOperatorPartyModels[0].economicOperatorRoleModel.roleCodeModel.eoRoleType.code =='LE'">
+        <div class="panel-heading" data-toggle="collapse" data-target="#info_reliance_other_entities_div"
+             ng-click="infoReliance = !infoReliance">
+            <span data-i18n="createeo_info_reliance" class="espd-marginLeft1em">{{variablesTranslate.createeo_info_reliance}}</span>
+        </div>
+        <div id="info_reliance_other_entities_div" class="collapse in">
+            <div class="panel-body">
+                <div id="CRITERION.OTHER.EO_DATA.RELIES_ON_OTHER_CAPACITIES" class="row"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel espd-panel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#information_subcontractors"
+             ng-click="infoReliance = !infoReliance">
+            <span class="espd-marginLeft1em">{{variablesTranslate.createeo_information_subcontractors}}</span>
+        </div>
+        <div id="information_subcontractors" class="collapse in">
+            <div class="panel-body">
+                <div id="CRITERION.OTHER.EO_DATA.SUBCONTRACTS_WITH_THIRD_PARTIES" class="row"></div>
+            </div>
+        </div>
+    </div>
+</form>

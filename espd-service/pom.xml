@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 mpetruzzi@pccube.com. All rights reserved. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+	    <groupId>eu.europa.ec.grow.espd</groupId>
+	    <artifactId>espd</artifactId>
+	    <version>1.0</version>
+  	</parent>
+	<artifactId>espd-service</artifactId>
+	<packaging>war</packaging>
+	<name>espd-service</name>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.version>4.3.2.RELEASE</spring.version>
+		<cglib.version>2.2.2</cglib.version>
+	    <sonar.exclusions>
+	    	src/test/java/**/*, 
+	    	src/main/resources/**/*, 
+	    	src/main/java/**/factory/*, 
+	    	src/main/java/**/model/*, 
+	    	src/main/java/**/utility/ExcelHandler.java, 
+	    	src/main/java/**/test/*
+	    </sonar.exclusions>
+	</properties>
+
+	<dependencies>
+
+		<!-- Exchange Data Model 2.0
+		<dependency>
+		  <groupId>eu.europa.ec.grow.espd</groupId>
+		  <artifactId>exchange-model2</artifactId>
+		  <version>2.0.2</version>
+		</dependency> -->
+		
+		<!-- Exchange Data Model 2.0 - Custom -->
+		<dependency>
+		  <groupId>eu.europa.ec.grow.espd</groupId>
+		  <artifactId>espd-edm</artifactId>
+		  <version>1.0</version>
+		</dependency>
+		
+		<!-- Generic Code Codelist 1.0 - Custom -->
+		<dependency>
+		  <groupId>eu.europa.ec.grow.espd</groupId>
+		  <artifactId>espd-codelist</artifactId>
+		  <version>1.0</version>
+		</dependency>
+		
+		<!-- Log4j -->
+	    <dependency>
+		  <groupId>log4j</groupId>
+		  <artifactId>log4j</artifactId>
+		  <version>1.2.17</version>
+		</dependency>
+		
+		<!-- Commons -->
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+		   <groupId>org.apache.commons</groupId>
+		   <artifactId>commons-text</artifactId>
+		   <version>1.5</version>
+		</dependency>
+		
+		<!-- Spring core & mvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+        </dependency>
+		
+		<!-- Javax Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Fasterxml Jackson -->
+	  	<dependency>
+		  	<groupId>com.fasterxml.jackson.core</groupId>
+		  	<artifactId>jackson-databind</artifactId>
+		  	<version>2.7.5</version>  
+		</dependency>
+		<dependency>
+		  	<groupId>com.fasterxml.jackson.core</groupId>
+		  	<artifactId>jackson-core</artifactId>
+	      	<version>2.7.5</version>
+	    </dependency>
+	    
+		<!-- Google Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        
+        <!-- Excel Reader/Writer -->
+        <dependency>
+	        <groupId>org.apache.poi</groupId>
+	        <artifactId>poi-ooxml</artifactId>
+	        <version>3.11-beta2</version>
+		</dependency>
+	
+        <!-- Javax Ws -->
+		<dependency>
+		    <groupId>javax.ws.rs</groupId>
+		    <artifactId>javax.ws.rs-api</artifactId>
+		    <version>2.1.1</version>
+        </dependency>
+		
+	</dependencies>
+
+	<build>
+		<finalName>espd-service</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+            <plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

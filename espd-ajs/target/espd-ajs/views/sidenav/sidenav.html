@@ -1,0 +1,31 @@
+<div ng-click="MainService.closeSidenav();$parent.$parent.sidenavOpened = false" ng-show="$parent.$parent.sidenavOpened" class="col-lg-12 espd-sidenav-background">
+</div>
+<div id="espdSidenav" class="col-lg-4 espd-sidenav nopadding" style="width:0">
+    <!-- <div ng-click="MainService.closeSidenav();$parent.$parent.sidenavOpened = false"
+         class="col-lg-1 espd-pointer espd-verticalAlign espd-sidenav-close-button">
+        <i class="fa fa-2x fa-angle-right" style="font-weight: bold; color: rgb(140,143,145);"></i>
+    </div> -->
+    <div class="col-lg-11" style="height:100%;">
+        <div class="row espd-sidenav-row-height">
+            <div class="col-lg-12 nopadding">
+                <button class="col-lg-4 espd-sidenav-up-button" ng-click="scrollTop();">
+                    <i class="fa fa-angle-up espd-sidenav-arrow-button-top"></i>
+                </button>
+            </div>
+        </div>
+        <ul class="espd-sidenav-overflow nopadding" id="criterionsSidenav" style="height: 90%;">
+            <li class="espd-pointer" ng-click="MainService.scrollToDivByID(criterionName)"
+                ng-repeat="criterionName in criterionMenu track by $index">
+                <a >{{criterions[CommonService.rebuildCriterionCode(criterionName)].name}}</a>
+            </li>
+        </ul>
+        <div class="row espd-sidenav-row-height">
+            <div class="col-lg-12 nopadding">
+                <button class="col-lg-4 espd-sidenav-down-button" ng-click="scrollDown();">
+                    <i class="fa fa-angle-down espd-sidenav-arrow-button-bottom"
+                       style="color:ivory;font-size:22px"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

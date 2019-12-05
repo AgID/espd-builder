@@ -1,0 +1,79 @@
+<div id="navigationButtons" class="hidden-print">
+	<div class="row">
+	    <div class="col-md-12 col-lg-12" style="text-align:center; margin: 2em 0em;">
+	        <div class="btn-group" role="group">
+	            <div class="btn-group" role="group" ng-show="!isStartPage">
+	                <button id="prevBtn" class="btn btn-primary btn-lg" name="prev"
+	                        ng-click="goBack()">
+	                    <i class="fa fa-arrow-circle-o-left"></i> <span data-i18n="previous">{{variablesTranslate.previous}}</span>
+	                </button>
+	            </div>
+	            <div class="btn-group" role="group" ng-show="true">
+	                <button id="cancelBtn" class="btn btn-primary btn-lg" ng-click="cancelModal()" ng-show="!isStartPage && !isOverview" type="button">
+	                    <i class="fa fa-times-circle"></i> <span data-i18n="cancel">{{variablesTranslate.cancel}}</span>
+	                </button>
+	            </div>
+	            <div class="btn-group" role="group" ng-show="false">
+	                <button id="overviewBtn" type="submit" ng-click="redirect($ctrl.buttons.next)"
+	                        class="btn btn-primary btn-lg" name="overview" value="true">
+	                    <i class="fa fa-print"></i> <span data-i18n="print">{{variablesTranslate.print}}</span>
+	                </button>
+	            </div>
+	            <div ng-show="false">
+	                <div class="btn-group dropup" role="group" aria-label="Download">
+	                    <button ng-show="false" type="submit" class="btn btn-primary btn-lg dropdown-toggle"
+	                            data-toggle="dropdown"
+	                            aria-haspopup="true" aria-expanded="false" name="download" value="xml">
+	                        <span data-i18n="download_as">{{variablesTranslate.download_as}}</span>
+	                        <span class="caret"></span>
+	                    </button>
+	                    <ul class="dropdown-menu">
+	                        <li ng-show="false">
+	                            <button id="downloadXmlButton" type="submit" class="btn btn-primary" name="download"
+	                                    value="xml">
+	                                <i class="fa fa-file-pdf-o"></i> <span>XML</span>
+	                            </button>
+	                        </li>
+	                        <li ng-show="false">
+	                            <button id="downloadPdfButton" type="submit" class="btn btn-primary" name="download"
+	                                    value="pdf">
+	                                <i class="fa fa-file-pdf-o"></i> <span data-i18n="download_pdf">{{variablesTranslate.download_pdf}}</span>
+	                            </button>
+	                        </li>
+	                        <li ng-show="false">
+	                            <button id="downloadZipButton" type="submit" class="btn btn-primary" name="download"
+	                                    value="zip">
+	                                <i class="fa fa-file-zip-o"></i> <span data-i18n="download_zip">{{variablesTranslate.download_zip}}</span>
+	                            </button>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="btn-group" role="group" ng-show="!afterConclusionPage">
+	                <button id="nextBtn"
+	                        ng-class="{'btn': true, 'btn-primary': true, 'btn-lg': true, 'espd-last-button': isStartPage}"
+	                        name="next" ng-click="goNext()"
+	                        ng-show="!isOverview"
+	                        ng-disabled="!nextDisabled() && isStartPage">
+	                    <span data-i18n="next">{{variablesTranslate.next}}</span>
+	                    <i class="fa fa-arrow-circle-o-right"></i>
+	                </button>
+	            </div>
+	            <div class="btn-group" role="group" ng-show="true">
+	                <button style="width: 12em" id="downloadXML" type="button"
+	                        ng-class="{'btn': true, 'btn-primary': true, 'btn-lg': true, 'espd-last-button': !isStartPage && !afterConclusionPage}"
+	                        name="next" ng-click="downloadXml()" ng-if="!(isStartPage)">
+	                    <i class="fa fa-download"></i> <span data-i18n="download">{{variablesTranslate.download}}</span>
+	                </button>
+	            </div>
+	            <div class="btn-group" role="group" ng-show="true">
+	                <button style="width: 13em" id="overview" type="button"
+	                        ng-class="{'btn': true, 'btn-primary': true, 'btn-lg': true, 'espd-last-button': afterConclusionPage}"
+	                        name="next" ng-click="goOverview()" ng-if="afterConclusionPage">
+	                    <i class="fa fa-print"></i> <span data-i18n="print">{{variablesTranslate.print}}</span>
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<!-- Copyright 2018 mpetruzzi@pccube.com. All rights reserved. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>espd-ear</artifactId>
+  <packaging>ear</packaging>
+  <name>espd-ear</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+	<finalName>espd-ear</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <configuration>
+            <version>6</version>
+            <defaultLibBundleDir>lib</defaultLibBundleDir>
+            <generateApplicationXml>true</generateApplicationXml>
+            <modules>
+	            <webModule>
+	             <groupId>eu.europa.ec.grow.espd</groupId>
+	  			 <artifactId>espd-service</artifactId>
+	  			 <contextRoot>/espd-service</contextRoot>
+	            </webModule>
+	            <webModule>
+	             <groupId>eu.europa.ec.grow.espd</groupId>
+	  			 <artifactId>espd-ajs</artifactId>
+	  			 <contextRoot>/espd-dgue</contextRoot>
+	            </webModule>
+          	</modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+   
+  <dependencies>
+  	<dependency>
+  		<groupId>eu.europa.ec.grow.espd</groupId>
+  		<artifactId>espd-ajs</artifactId>
+  		<version>1.0</version>
+  		<type>war</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>eu.europa.ec.grow.espd</groupId>
+  		<artifactId>espd-service</artifactId>
+  		<version>1.0</version>
+  		<type>war</type>
+  	</dependency>
+  </dependencies>
+  <parent>
+  	<groupId>eu.europa.ec.grow.espd</groupId>
+  	<artifactId>espd</artifactId>
+  	<version>1.0</version>
+  </parent>
+</project>

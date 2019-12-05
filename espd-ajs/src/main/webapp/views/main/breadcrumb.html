@@ -1,0 +1,16 @@
+<!-- <div id="espd-breadbar" class="hidden-print espd-breadbar">
+	<ul ng-if="!equals({}, $ctrl.breadcrumb.breadcrumbAsMap)" class="espd-breadcrumbs">
+		<li ng-repeat="(key, value) in $ctrl.breadcrumb.breadcrumbAsMap">
+			<a ng-if="$last == false" target="_blank" href="{{key}}" data-i18n="{{value}}" class="espd-breadcrumbElement"></a>
+			<a ng-if="$last == true" href="{{key}}" data-i18n="{{value}}" class="espd-breadcrumbElement"></a>
+		</li>
+	</ul>
+</div> -->
+<div id="espd-breadbar" class="hidden-print espd-breadbar">
+	<ul ng-if="!equals({}, breadcrumb.breadcrumbAsMap)" class="espd-breadcrumbs">
+		<li ng-repeat="(key, value) in breadcrumb.breadcrumbAsMap">
+			<a ng-if="$last == false" target="_blank" href="{{key}}" data-i18n="{{value}}" class="espd-breadcrumbElement">{{variablesTranslate[value]}}</a>
+			<a ng-if="$last == true" href="{{key}}" data-i18n="{{value}}" class="espd-breadcrumbElement">{{variablesTranslate[value]}}</a>
+		</li>
+	</ul>
+</div>

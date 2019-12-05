@@ -1,0 +1,41 @@
+<div id="cigModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header espd-centerAlign">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <span class="espd-marginLeftAsFaIcon">{{variablesTranslate.createca_add_cig}}</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+               	<div class="form-horizontal">
+               		<div class="form-group" ng-repeat="cigLotto in applicationJson.procurementProjectLotModels track by $index">
+               			<div class="row" style="margin: 0px;">
+               				<div class="col-md-1"></div>
+	                        <label class="col-md-2 control-label"><span>{{cigLotto.idModel.id.split('_')[0]}}</span></label>
+	                        <div class="col-md-8">
+	                            <input required class="form-control valid-feedback" type="text"
+	                            	ng-model="cigCode[$index]"
+                                    ng-attr-placeholder="{{variablesTranslate.crit_add}}"
+		                            ng-disabled="startVariables.userRole == 'eo'"/>
+	                        </div>
+               				<div class="col-md-1"></div>
+	                	</div>
+               		</div>
+               	</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondario" data-dismiss="modal" ng-click="reloadCig()">
+                    {{variablesTranslate.modal_cancel_button}}
+                </button>
+                <button type="button" class="btn btn-primario" ng-click="removeCig()">
+                    {{variablesTranslate.modal_empty_button}}
+                </button>
+                <button type="button" class="btn btn-primario" data-dismiss="modal" ng-click="saveCig()">
+                    {{variablesTranslate.modal_confirm_button}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

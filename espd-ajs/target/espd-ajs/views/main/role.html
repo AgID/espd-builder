@@ -1,0 +1,13 @@
+<div class="row">
+    <strong class="col-md-4 col-md-offset-8">
+        <span ng-if="role.agent == 'eo'" data-i18n="role_eo"></span>
+        <span ng-if="role.agent == 'ca'" data-i18n="role_ca"></span>
+
+        <div ng-if="role.showLink != 'false'">
+            <a href="${pageContext.request.contextPath}/${page}">
+                <span ng-if="role.agent == 'eo'" data-i18n="view_ca"></span>
+                <span ng-if="role.agent == 'ca'" data-i18n="view_eo"></span>
+            </a>
+        </div>
+    </strong>
+</div>

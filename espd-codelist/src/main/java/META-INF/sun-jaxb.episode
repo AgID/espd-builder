@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.11 
+Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2018.12.28 alle 03:37:31 PM CET 
+
+  -->
+  <bindings xmlns:tns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="org.oasis_open.docs.codelist.ns.genericode._1"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:CodeListDocument">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.CodeListDocument"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CodeListSetDocument">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.CodeListSetDocument"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ColumnSetDocument">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.ColumnSetDocument"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Agency">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Agency"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Annotation">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Annotation"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:AnyOtherContent">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.AnyOtherContent"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:AnyOtherLanguageContent">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.AnyOtherLanguageContent"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CodeListRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.CodeListRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CodeListSetRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.CodeListSetRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Column">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Column"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ColumnRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.ColumnRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ColumnSet">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.ColumnSet"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ColumnSetRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.ColumnSetRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Data">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Data"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DataRestrictions">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.DataRestrictions"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DatatypeFacet">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.DatatypeFacet"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:GeneralIdentifier">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.GeneralIdentifier"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Identification">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Identification"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Key">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Key"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:KeyColumnRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.KeyColumnRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:KeyRef">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.KeyRef"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:LongName">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.LongName"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:MimeTypedUri">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.MimeTypedUri"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Row">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Row"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ShortName">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.ShortName"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SimpleCodeList">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.SimpleCodeList"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SimpleValue">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.SimpleValue"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Value">
+      <class ref="org.oasis_open.docs.codelist.ns.genericode._1.Value"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:UseType">
+      <typesafeEnumClass ref="org.oasis_open.docs.codelist.ns.genericode._1.UseType"/>
+    </bindings>
+  </bindings>
+</bindings>

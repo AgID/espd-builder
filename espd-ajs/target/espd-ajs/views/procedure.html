@@ -1,0 +1,12 @@
+<div>
+    <div static-include template-path="./views/main/role.html"></div>
+    <div>
+        <div static-include template-path="./views/procedureForm/firstSection.html"></div>
+        <div ng-show="startVariables.userRole == 'eo'" static-include template-path="./views/procedureForm/secondSection.html"></div>
+    </div>
+    <div static-include template-path="./views/main/buttons.html"></div>
+</div>
+
+<div static-include template-path="./views/modals/cancelModal.html"></div>
+<div static-include template-path="./views/modals/cpvModal.html"></div>
+<div static-include template-path="./views/modals/cigModal.html"></div>

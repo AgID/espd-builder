@@ -1,0 +1,40 @@
+<div>
+    <div static-include template-path="./views/main/role.html"></div>
+
+    <div class="panel-default">
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active espd-pointer"><a data-target="#procedure" aria-controls="home" role="tab"
+                                                          data-toggle="tab">{{variablesTranslate.progress_procedure}}</a>
+                </li>
+                <li role="presentation" class="espd-pointer"><a data-target="#exclusion" aria-controls="profile" role="tab" data-toggle="tab">{{variablesTranslate.progress_exclusion}}</a>
+                </li>
+                <li role="presentation" class="espd-pointer"><a data-target="#selection" aria-controls="messages" role="tab"
+                                           data-toggle="tab">{{variablesTranslate.progress_selection}}</a>
+                </li>
+                <li role="presentation" class="espd-pointer"><a data-target="#conclusion" aria-controls="settings" role="tab"
+                                           data-toggle="tab">{{variablesTranslate.progress_finish}}</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="procedure">
+                    <div static-include template-path="./views/overviewForm/overviewFirstSection.html"></div>
+                    <div ng-show="startVariables.userRole == 'eo'" static-include
+                         template-path="./views/overviewForm/overviewSecondSection.html"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="exclusion">
+                    <div static-include template-path="./views/overviewForm/overviewExclusion.html"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="selection">
+                    <div static-include template-path="./views/overviewForm/overviewSelection.html"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="conclusion">
+                    <div static-include template-path="./views/overviewForm/overviewConclusion.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div static-include template-path="./views/main/buttons.html"></div>
+</div>

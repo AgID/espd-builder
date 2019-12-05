@@ -1,0 +1,28 @@
+<div id="cancelModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header espd-centerAlign">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <span class="fa fa-warning"></span>
+                    <span class="espd-marginLeftAsFaIcon">{{variablesTranslate.modal_header_warning}}</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <span ng-show="!afterConclusionPage">{{variablesTranslate.modal_cancel_body}}</span>
+                    <span ng-show="afterConclusionPage">{{variablesTranslate.modal_cancel_final_body}}</span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondario" data-dismiss="modal">
+                    {{variablesTranslate.modal_cancel_button}}
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="cancel()">
+                    {{variablesTranslate.modal_confirm_button}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
